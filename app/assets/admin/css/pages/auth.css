@@ -1,0 +1,92 @@
+/* 认证页面容器由 auth/Panel 以 scoped 加载，表单交互样式归 auth/Form。 */
+.admin-auth-page {
+    display: grid;
+    place-items: center;
+    min-height: 100svh;
+    box-sizing: border-box;
+    padding: 48px 24px;
+    background: radial-gradient(ellipse at 50% 0, #e8eef6, transparent 65%), #f6f7f9;
+}
+
+.admin-auth-page-password {
+    min-height: calc(100svh - 128px);
+}
+
+.admin-auth-panel {
+    width: min(100%, 440px);
+    box-sizing: border-box;
+    padding: 36px;
+    border: 1px solid #e0e6ee;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 12px 40px #243b5310;
+}
+
+.admin-auth-brand {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid #edf0f4;
+}
+
+.admin-auth-brand img {
+    display: block;
+    width: 144px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.admin-auth-brand span {
+    color: #7b899b;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.admin-auth-heading {
+    margin-top: 28px;
+}
+
+.admin-auth-heading h1 {
+    margin: 0;
+    color: #24364b;
+    font-size: 24px;
+    font-weight: 650;
+    letter-spacing: -.5px;
+}
+
+.admin-auth-heading p {
+    margin: 10px 0 0;
+    color: #778497;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.admin-auth-footer {
+    margin: 28px 0 0;
+    padding-top: 22px;
+    border-top: 1px solid #edf0f4;
+    color: #94a0af;
+    font-size: 11px;
+    text-align: center;
+}
+
+@media (max-width: 480px) {
+    .admin-auth-page {
+        padding: 24px 16px;
+    }
+
+    .admin-auth-panel {
+        padding: 28px 24px;
+        border-radius: 12px;
+    }
+
+    .admin-auth-brand img {
+        width: 128px;
+    }
+
+    .admin-auth-heading h1 {
+        font-size: 22px;
+    }
+}

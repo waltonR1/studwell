@@ -1,0 +1,47 @@
+[
+  {
+    "code": "website_home",
+    "name": "首页",
+    "sortOrder": 100
+  },
+  {
+    "code": "website_about",
+    "name": "关于我们",
+    "sortOrder": 200
+  },
+  {
+    "code": "website_investment",
+    "name": "投资业务",
+    "sortOrder": 300
+  },
+  {
+    "code": "website_export",
+    "name": "出口业务",
+    "sortOrder": 400
+  },
+  {
+    "code": "website_products",
+    "name": "产品",
+    "sortOrder": 500
+  },
+  {
+    "code": "website_sustainability",
+    "name": "可持续发展",
+    "sortOrder": 600
+  },
+  {
+    "code": "website_news",
+    "name": "新闻",
+    "sortOrder": 700
+  },
+  {
+    "code": "website_careers",
+    "name": "招聘",
+    "sortOrder": 800
+  },
+  {
+    "code": "website_contact",
+    "name": "联系我们",
+    "sortOrder": 900
+  }
+]

@@ -1,0 +1,3 @@
+/* 本地照片容器。 */
+.industrial-visual { position: relative; overflow: hidden; min-height: 220px; background: linear-gradient(160deg,#657d86,#354e5b 46%,#182f3d); isolation: isolate; }
+.media-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }

@@ -1,0 +1,255 @@
+{
+  "roles": [
+    {
+      "code": "platform_admin",
+      "name": "后台管理员",
+      "pageKeys": [
+        "users",
+        "roles",
+        "menus",
+        "parameters",
+        "dictionaries",
+        "tasks",
+        "login_logs",
+        "audit_logs",
+        "security_logs",
+        "media",
+        "site_settings",
+        "site_header",
+        "site_footer",
+        "website_page",
+        "website_templates"
+      ],
+      "permissions": [
+        "system.dashboard.read",
+        "content.pages.read",
+        "content.pages.update",
+        "content.pages.publish",
+        "content.pages.delete",
+        "content.templates.read",
+        "content.templates.update",
+        "content.media.read",
+        "content.media.create",
+        "content.media.update",
+        "content.media.delete",
+        "content.site_settings.read",
+        "content.site_settings.update",
+        "content.site_settings.publish",
+        "system.users.read",
+        "system.users.create",
+        "system.users.update",
+        "system.users.assign_roles",
+        "system.users.reset_password",
+        "system.users.delete",
+        "system.roles.read",
+        "system.roles.create",
+        "system.roles.update",
+        "system.roles.assign_permissions",
+        "system.roles.assign_menus",
+        "system.roles.delete",
+        "system.menus.read",
+        "system.menus.create",
+        "system.menus.update",
+        "system.menus.delete",
+        "system.parameters.read",
+        "system.parameters.update",
+        "system.parameters.security.update",
+        "system.tasks.read",
+        "system.tasks.update",
+        "system.tasks.change_status",
+        "system.tasks.run",
+        "system.tasks.stop",
+        "system.tasks.force_stop",
+        "system.dictionaries.read",
+        "system.dictionaries.create",
+        "system.dictionaries.update",
+        "system.dictionaries.items.create",
+        "system.dictionaries.items.update",
+        "system.logs.login.read",
+        "system.logs.login.export",
+        "system.logs.login.sources.read",
+        "system.logs.login.sources.export",
+        "system.logs.audit.read",
+        "system.logs.audit.export",
+        "system.logs.audit.sources.read",
+        "system.logs.audit.sources.export",
+        "system.logs.security.read",
+        "system.logs.security.export",
+        "system.logs.security.sources.read",
+        "system.logs.security.sources.export"
+      ]
+    },
+    {
+      "code": "system_configurator",
+      "name": "系统配置员",
+      "pageKeys": [
+        "parameters",
+        "dictionaries"
+      ],
+      "permissions": [
+        "system.dashboard.read",
+        "system.parameters.read",
+        "system.parameters.update",
+        "system.dictionaries.read",
+        "system.dictionaries.create",
+        "system.dictionaries.update",
+        "system.dictionaries.items.create",
+        "system.dictionaries.items.update"
+      ]
+    },
+    {
+      "code": "audit_reader",
+      "name": "审计查看员",
+      "pageKeys": [
+        "login_logs",
+        "audit_logs",
+        "security_logs"
+      ],
+      "permissions": [
+        "system.dashboard.read",
+        "system.logs.login.read",
+        "system.logs.audit.read",
+        "system.logs.security.read"
+      ]
+    },
+    {
+      "code": "task_operator",
+      "name": "任务运维员",
+      "pageKeys": [
+        "tasks"
+      ],
+      "permissions": [
+        "system.dashboard.read",
+        "system.tasks.read",
+        "system.tasks.update",
+        "system.tasks.change_status",
+        "system.tasks.run",
+        "system.tasks.stop",
+        "system.tasks.force_stop"
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "username": "demo_admin",
+      "displayName": "陈明（示例）",
+      "department": "information",
+      "position": "administrator",
+      "role": "platform_admin",
+      "enabled": true
+    },
+    {
+      "username": "demo_config",
+      "displayName": "林悦（示例）",
+      "department": "information",
+      "position": "configurator",
+      "role": "system_configurator",
+      "enabled": true
+    },
+    {
+      "username": "demo_auditor",
+      "displayName": "王宁（示例）",
+      "department": "audit",
+      "position": "auditor",
+      "role": "audit_reader",
+      "enabled": true
+    },
+    {
+      "username": "demo_operator",
+      "displayName": "周航（示例）",
+      "department": "operations",
+      "position": "operator",
+      "role": "task_operator",
+      "enabled": true
+    },
+    {
+      "username": "demo_supervisor",
+      "displayName": "赵岚（示例）",
+      "department": "audit",
+      "position": "supervisor",
+      "role": "audit_reader",
+      "enabled": true
+    },
+    {
+      "username": "demo_departed",
+      "displayName": "孙晨（离职示例）",
+      "department": "international",
+      "position": "specialist",
+      "role": null,
+      "enabled": false
+    }
+  ],
+  "inquiry": {
+    "submissionKey": "366083e3-a9ad-4092-90d6-ff923c0661d3",
+    "locale": "zh",
+    "name": "示例客户",
+    "email": "sample-customer@example.invalid",
+    "company": "示例公司",
+    "country": "中国",
+    "message": "产品咨询示例，仅用于展示，不代表真实客户。"
+  },
+  "dictionaries": [
+    {
+      "code": "account_department",
+      "name": "所属部门",
+      "description": "账号资料中的部门选项，不参与权限判断。",
+      "items": [
+        [
+          "management",
+          "综合管理部"
+        ],
+        [
+          "information",
+          "信息技术部"
+        ],
+        [
+          "audit",
+          "审计合规部"
+        ],
+        [
+          "operations",
+          "运营保障部"
+        ],
+        [
+          "international",
+          "国际业务部"
+        ],
+        [
+          "marketing",
+          "品牌市场部"
+        ]
+      ]
+    },
+    {
+      "code": "account_position",
+      "name": "职务／岗位",
+      "description": "账号资料中的岗位选项，不参与权限判断。",
+      "items": [
+        [
+          "administrator",
+          "系统管理员"
+        ],
+        [
+          "configurator",
+          "系统配置专员"
+        ],
+        [
+          "auditor",
+          "审计专员"
+        ],
+        [
+          "operator",
+          "运维工程师"
+        ],
+        [
+          "supervisor",
+          "审计主管"
+        ],
+        [
+          "specialist",
+          "业务专员"
+        ]
+      ]
+    }
+  ]
+}

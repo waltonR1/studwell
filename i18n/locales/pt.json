@@ -1,0 +1,87 @@
+{
+  "nav": {
+    "home": "Início",
+    "news": "Notícias",
+    "contact": "Contacto"
+  },
+  "common": {
+    "language": "Idioma",
+    "navigation": "Navegação principal",
+    "menu": "Abrir menu",
+    "close": "Fechar menu",
+    "skip": "Ir para o conteúdo",
+    "breadcrumb": "Caminho de navegação",
+    "menuLabel": "Menu",
+    "closeLabel": "Fechar",
+    "loadingHome": "Preparando a página inicial"
+  },
+  "news": {
+    "detailPreview": "É necessário um artigo para pré-visualizar esta seção.",
+    "viewCount": "Visualizações: {count}",
+    "source": "Fonte",
+    "listSection": {
+      "filterLabel": "Categorias de notícias",
+      "count": "{count} artigos",
+      "pagination": "Páginas de notícias",
+      "failed": "Não foi possível carregar as notícias."
+    },
+    "contents": "Conteúdo"
+  },
+  "contact": {
+    "formSection": {
+      "invalidEmail": "Informe um e-mail válido, como name{'@'}example.com.",
+      "title": "Diga-nos o que precisa",
+      "name": "Nome",
+      "company": "Empresa",
+      "email": "Email",
+      "country": "País / região",
+      "message": "Mensagem",
+      "note": "Descreva o que precisa e informe seu e-mail.",
+      "category": "Tipo de consulta",
+      "optional": "Opcional",
+      "chooseCategory": "Selecione um tipo de consulta",
+      "categoryChanged": "Este tipo de consulta não está mais disponível. Selecione outro.",
+      "submit": "Enviar consulta",
+      "submitting": "Enviando…",
+      "received": "Consulta recebida. Referência: {id}.",
+      "failed": "Não foi possível enviar a consulta. Tente novamente ou use os contatos desta página.",
+      "rateLimited": "Muitos envios. Tente novamente mais tarde."
+    }
+  },
+  "search": {
+    "title": "Pesquisar",
+    "intro": "Encontre produtos, referências, notícias e informações de negócio.",
+    "label": "Termos de pesquisa",
+    "placeholder": "Produto, referência ou palavra-chave",
+    "submit": "Pesquisar",
+    "clear": "Limpar pesquisa",
+    "hint": "Experimente um produto, uma referência de norma ou uma atividade.",
+    "filterLabel": "Tipos de resultados",
+    "resultCount": "Resultados para «{query}»: {count}",
+    "loading": "A carregar a pesquisa…",
+    "failed": "Não foi possível carregar a pesquisa",
+    "retryHint": "Verifique a ligação e tente novamente.",
+    "retry": "Tentar novamente",
+    "emptyHint": "Nenhum conteúdo encontrado. Experimente outra palavra-chave.",
+    "tooLong": "Introduza no máximo 100 caracteres.",
+    "invalid": "Introduza um termo com letras ou números.",
+    "pagination": "Páginas de resultados",
+    "previous": "Página anterior",
+    "next": "Página seguinte",
+    "goToPage": "Página {page}",
+    "pageCount": "Página {page} de {count}",
+    "noScript": "A pesquisa requer JavaScript. Pode também consultar os produtos ou as notícias.",
+    "types": {
+      "all": "Tudo",
+      "news": "Notícias",
+      "pages": "Páginas"
+    },
+    "initialPrompt": "Introduza uma palavra-chave para encontrar conteúdo"
+  },
+  "careers": {
+    "status": {
+      "loading": "A carregar vagas…",
+      "error": "Não foi possível carregar as vagas. Tente novamente mais tarde."
+    }
+  }
+}

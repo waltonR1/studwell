@@ -1,0 +1,30 @@
+# Nuxt dev/build outputs
+.output
+.data
+.nuxt
+.nitro
+.cache
+dist
+
+# 忽略旧版构建脚本留下的索引；当前索引默认在 .data/search
+public/search/*.json
+
+# Node dependencies
+node_modules
+
+# Logs
+/logs/
+*.log
+
+# Misc
+.DS_Store
+.fleet
+.idea
+
+# Local env files
+.env
+.env.*
+!.env.example
+
+# 运行期媒体上传，随数据库备份/迁移，不作为源码提交
+/public/uploads/

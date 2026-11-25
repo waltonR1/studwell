@@ -1,0 +1,492 @@
+[
+  {
+    "scope": "public",
+    "key": "about.factsSection",
+    "componentPath": "app/components/public/sections/about/FactsSection.vue"
+  },
+  {
+    "scope": "public",
+    "key": "hero.about",
+    "componentPath": "app/components/public/sections/about/HeroSection.vue"
+  },
+  {
+    "scope": "public",
+    "key": "about.historySection",
+    "componentPath": "app/components/public/sections/about/HistorySection.vue"
+  },
+  {
+    "scope": "public",
+    "key": "about.profileSection",
+    "componentPath": "app/components/public/sections/about/ProfileSection.vue"
+  },
+  {
+    "scope": "public",
+    "key": "about.structureSection",
+    "componentPath": "app/components/public/sections/about/StructureSection.vue"
+  },
+  {
+    "scope": "public",
+    "key": "about.valuesSection",
+    "componentPath": "app/components/public/sections/about/ValuesSection.vue"
+  },
+  {
+    "scope": "public",
+    "key": "hero.careers",
+    "componentPath": "app/components/public/sections/careers/HeroSection.vue"
+  },
+  {
+    "scope": "public",
+    "key": "careers.positionsSection",
+    "componentPath": "app/components/public/sections/careers/PositionsSection.vue"
+  },
+  {
+    "scope": "public",
+    "key": "contact.cta",
+    "componentPath": "app/components/public/sections/common/ContactCallout.vue"
+  },
+  {
+    "scope": "public",
+    "key": "content.links",
+    "componentPath": "app/components/public/sections/common/LinkCards.vue"
+  },
+  {
+    "scope": "public",
+    "key": "content.page-entry",
+    "componentPath": "app/components/public/sections/common/PageEntry.vue"
+  },
+  {
+    "scope": "public",
+    "key": "content.page-nav",
+    "componentPath": "app/components/public/sections/common/PageGroupNavigation.vue"
+  },
+  {
+    "scope": "public",
+    "key": "content.text",
+    "componentPath": "app/components/public/sections/common/TextContent.vue"
+  },
+  {
+    "scope": "public",
+    "key": "hero.column",
+    "componentPath": "app/components/public/sections/common/TopicHero.vue"
+  },
+  {
+    "scope": "public",
+    "key": "contact.detailsSection",
+    "componentPath": "app/components/public/sections/contact/ContactSection.vue"
+  },
+  {
+    "scope": "public",
+    "key": "hero.contact",
+    "componentPath": "app/components/public/sections/contact/HeroSection.vue"
+  },
+  {
+    "scope": "public",
+    "key": "export.certificatesSection",
+    "componentPath": "app/components/public/sections/export/CertificatesSection.vue"
+  },
+  {
+    "scope": "public",
+    "key": "hero.export",
+    "componentPath": "app/components/public/sections/export/HeroSection.vue"
+  },
+  {
+    "scope": "public",
+    "key": "export.overviewSection",
+    "componentPath": "app/components/public/sections/export/OverviewSection.vue"
+  },
+  {
+    "scope": "public",
+    "key": "export.shippingSection",
+    "componentPath": "app/components/public/sections/export/ShippingSection.vue"
+  },
+  {
+    "scope": "public",
+    "key": "home.about",
+    "componentPath": "app/components/public/sections/home/AboutSection.vue"
+  },
+  {
+    "scope": "public",
+    "key": "home.business",
+    "componentPath": "app/components/public/sections/home/BusinessSection.vue"
+  },
+  {
+    "scope": "public",
+    "key": "home.hero",
+    "componentPath": "app/components/public/sections/home/HeroSection.vue"
+  },
+  {
+    "scope": "public",
+    "key": "home.news",
+    "componentPath": "app/components/public/sections/home/NewsSection.vue"
+  },
+  {
+    "scope": "public",
+    "key": "home.products",
+    "componentPath": "app/components/public/sections/home/ProductsSection.vue"
+  },
+  {
+    "scope": "public",
+    "key": "home.statistics",
+    "componentPath": "app/components/public/sections/home/StatisticsSection.vue"
+  },
+  {
+    "scope": "public",
+    "key": "investment.managementSection",
+    "componentPath": "app/components/public/sections/investment/ManagementSection.vue"
+  },
+  {
+    "scope": "public",
+    "key": "investment.marketSection",
+    "componentPath": "app/components/public/sections/investment/MarketSection.vue"
+  },
+  {
+    "scope": "public",
+    "key": "investment.newFactorySection",
+    "componentPath": "app/components/public/sections/investment/NewFactorySection.vue"
+  },
+  {
+    "scope": "public",
+    "key": "investment.policySection",
+    "componentPath": "app/components/public/sections/investment/PolicySection.vue"
+  },
+  {
+    "scope": "public",
+    "key": "investment.upgradeSection",
+    "componentPath": "app/components/public/sections/investment/UpgradeSection.vue"
+  },
+  {
+    "scope": "public",
+    "key": "sustainability.communitySection",
+    "componentPath": "app/components/public/sections/sustainability/CommunitySection.vue"
+  },
+  {
+    "scope": "public",
+    "key": "sustainability.employmentSection",
+    "componentPath": "app/components/public/sections/sustainability/EmploymentSection.vue"
+  },
+  {
+    "scope": "public",
+    "key": "sustainability.greenSection",
+    "componentPath": "app/components/public/sections/sustainability/GreenSection.vue"
+  },
+  {
+    "scope": "public",
+    "key": "sustainability.localizationSection",
+    "componentPath": "app/components/public/sections/sustainability/LocalizationSection.vue"
+  },
+  {
+    "scope": "public",
+    "key": "sustainability.transferSection",
+    "componentPath": "app/components/public/sections/sustainability/TransferSection.vue"
+  },
+  {
+    "scope": "public",
+    "key": "hero.news",
+    "componentPath": "app/components/public/sections/news/catalog/HeroSection.vue"
+  },
+  {
+    "scope": "public",
+    "key": "news.list",
+    "componentPath": "app/components/public/sections/news/catalog/ListSection.vue"
+  },
+  {
+    "scope": "public",
+    "key": "news.article",
+    "componentPath": "app/components/public/sections/news/detail/ArticleSection.vue"
+  },
+  {
+    "scope": "public",
+    "key": "hero.products",
+    "componentPath": "app/components/public/sections/products/catalog/HeroSection.vue"
+  },
+  {
+    "scope": "public",
+    "key": "product.cement_specialties",
+    "componentPath": "app/components/public/sections/products/category/CementOverviewSection.vue"
+  },
+  {
+    "scope": "public",
+    "key": "product.cement_packaging",
+    "componentPath": "app/components/public/sections/products/category/CementPackagingSection.vue"
+  },
+  {
+    "scope": "public",
+    "key": "product.cement_standards",
+    "componentPath": "app/components/public/sections/products/category/CementStandardsSection.vue"
+  },
+  {
+    "scope": "public",
+    "key": "product.concrete",
+    "componentPath": "app/components/public/sections/products/category/ConcreteOverviewSection.vue"
+  },
+  {
+    "scope": "public",
+    "key": "hero.product_category",
+    "componentPath": "app/components/public/sections/products/category/HeroSection.vue"
+  },
+  {
+    "scope": "public",
+    "key": "product.housing_overview",
+    "componentPath": "app/components/public/sections/products/category/HousingOverviewSection.vue"
+  },
+  {
+    "scope": "public",
+    "key": "product.lime",
+    "componentPath": "app/components/public/sections/products/category/LimeOverviewSection.vue"
+  },
+  {
+    "scope": "public",
+    "key": "product.precast",
+    "componentPath": "app/components/public/sections/products/category/PrecastOverviewSection.vue"
+  },
+  {
+    "scope": "public",
+    "key": "product.gallery",
+    "componentPath": "app/components/public/sections/products/category/ProductGallerySection.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "about.factsSection",
+    "componentPath": "app/components/public/sections/about/FactsSection.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "hero.about",
+    "componentPath": "app/components/public/sections/about/HeroSection.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "about.historySection",
+    "componentPath": "app/components/public/sections/about/HistorySection.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "about.profileSection",
+    "componentPath": "app/components/public/sections/about/ProfileSection.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "about.structureSection",
+    "componentPath": "app/components/public/sections/about/StructureSection.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "about.valuesSection",
+    "componentPath": "app/components/public/sections/about/ValuesSection.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "hero.careers",
+    "componentPath": "app/components/public/sections/careers/HeroSection.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "careers.positionsSection",
+    "componentPath": "app/components/public/sections/careers/PositionsSection.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "contact.cta",
+    "componentPath": "app/components/public/sections/common/ContactCallout.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "content.links",
+    "componentPath": "app/components/public/sections/common/LinkCards.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "content.page-entry",
+    "componentPath": "app/components/public/sections/common/PageEntry.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "content.page-nav",
+    "componentPath": "app/components/public/sections/common/PageGroupNavigation.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "hero.column",
+    "componentPath": "app/components/public/sections/common/TopicHero.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "contact.detailsSection",
+    "componentPath": "app/components/public/sections/contact/ContactDetails.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "hero.contact",
+    "componentPath": "app/components/public/sections/contact/HeroSection.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "export.certificatesSection",
+    "componentPath": "app/components/public/sections/export/CertificatesSection.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "hero.export",
+    "componentPath": "app/components/public/sections/export/HeroSection.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "export.overviewSection",
+    "componentPath": "app/components/public/sections/export/OverviewSection.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "export.shippingSection",
+    "componentPath": "app/components/public/sections/export/ShippingSection.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "home.about",
+    "componentPath": "app/components/public/sections/home/AboutSection.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "home.business",
+    "componentPath": "app/components/public/sections/home/BusinessSection.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "home.hero",
+    "componentPath": "app/components/public/sections/home/HeroSection.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "home.news",
+    "componentPath": "app/components/public/sections/home/NewsSection.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "home.products",
+    "componentPath": "app/components/public/sections/home/ProductsSection.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "home.statistics",
+    "componentPath": "app/components/public/sections/home/StatisticsSection.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "investment.managementSection",
+    "componentPath": "app/components/public/sections/investment/ManagementSection.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "investment.marketSection",
+    "componentPath": "app/components/public/sections/investment/MarketSection.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "investment.newFactorySection",
+    "componentPath": "app/components/public/sections/investment/NewFactorySection.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "investment.policySection",
+    "componentPath": "app/components/public/sections/investment/PolicySection.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "investment.upgradeSection",
+    "componentPath": "app/components/public/sections/investment/UpgradeSection.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "sustainability.communitySection",
+    "componentPath": "app/components/public/sections/sustainability/CommunitySection.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "sustainability.employmentSection",
+    "componentPath": "app/components/public/sections/sustainability/EmploymentSection.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "sustainability.greenSection",
+    "componentPath": "app/components/public/sections/sustainability/GreenSection.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "sustainability.localizationSection",
+    "componentPath": "app/components/public/sections/sustainability/LocalizationSection.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "sustainability.transferSection",
+    "componentPath": "app/components/public/sections/sustainability/TransferSection.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "hero.news",
+    "componentPath": "app/components/public/sections/news/catalog/HeroSection.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "news.list",
+    "componentPath": "app/components/public/sections/news/catalog/ListSection.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "news.article",
+    "componentPath": "app/components/public/sections/news/detail/ArticleSection.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "hero.products",
+    "componentPath": "app/components/public/sections/products/catalog/HeroSection.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "product.cement_specialties",
+    "componentPath": "app/components/public/sections/products/category/CementOverviewSection.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "product.cement_packaging",
+    "componentPath": "app/components/public/sections/products/category/CementPackagingSection.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "product.cement_standards",
+    "componentPath": "app/components/public/sections/products/category/CementStandardsSection.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "product.concrete",
+    "componentPath": "app/components/public/sections/products/category/ConcreteOverviewSection.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "hero.product_category",
+    "componentPath": "app/components/public/sections/products/category/HeroSection.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "product.housing_overview",
+    "componentPath": "app/components/public/sections/products/category/HousingOverviewSection.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "product.lime",
+    "componentPath": "app/components/public/sections/products/category/LimeOverviewSection.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "product.precast",
+    "componentPath": "app/components/public/sections/products/category/PrecastOverviewSection.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "product.gallery",
+    "componentPath": "app/components/public/sections/products/category/ProductGallerySection.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "content.text",
+    "componentPath": "app/components/admin/preview/templates/TextContent.vue"
+  }
+]

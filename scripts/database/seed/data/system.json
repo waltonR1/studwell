@@ -1,0 +1,94 @@
+{
+  "parameters": {
+    "admin.list.defaultPageSize": 20,
+    "admin.logs.exportLimit": 5000,
+    "security.session.anonymousSeconds": 600,
+    "security.session.idleSeconds": 1800,
+    "security.session.absoluteSeconds": 43200,
+    "security.password.minLength": 6,
+    "security.password.maxLength": 128,
+    "security.password.blocklistEnabled": true,
+    "security.rate.bootstrap.count": 30,
+    "security.rate.bootstrap.windowSeconds": 600,
+    "security.rate.login-ip.count": 20,
+    "security.rate.login-ip.windowSeconds": 600,
+    "security.rate.login-account.count": 5,
+    "security.rate.login-account.windowSeconds": 900,
+    "security.rate.change-password.count": 5,
+    "security.rate.change-password.windowSeconds": 900,
+    "security.rate.session-status.count": 120,
+    "security.rate.session-status.windowSeconds": 60,
+    "security.rate.admin-api.count": 120,
+    "security.rate.admin-api.windowSeconds": 60,
+    "security.rate.csrf-log.count": 10,
+    "security.rate.csrf-log.windowSeconds": 60,
+    "security.rate.rbac-log.count": 10,
+    "security.rate.rbac-log.windowSeconds": 60,
+    "security.rate.media-read.count": 600,
+    "security.rate.media-read.windowSeconds": 60,
+    "security.rate.public-inquiry.count": 8,
+    "security.rate.public-inquiry.windowSeconds": 600
+  },
+  "tasks": {
+    "log_cleanup": {
+      "schedule": {
+        "mode": "daily",
+        "time": "03:00"
+      },
+      "retention": {
+        "login": 180,
+        "audit": 730,
+        "security": 730
+      },
+      "enabled": true
+    },
+    "auth_cleanup": {
+      "schedule": {
+        "mode": "interval",
+        "minutes": 15
+      },
+      "retention": null,
+      "enabled": true
+    },
+    "run_cleanup": {
+      "schedule": {
+        "mode": "daily",
+        "time": "04:00"
+      },
+      "retention": null,
+      "enabled": true
+    },
+    "search_rebuild": {
+      "schedule": {
+        "mode": "interval",
+        "minutes": 15
+      },
+      "retention": null,
+      "enabled": true
+    }
+  },
+  "inquirySettings": {
+    "categories": [],
+    "mail": {
+      "forwardEnabled": false,
+      "replyEnabled": false,
+      "assignmentEnabled": false,
+      "from": "",
+      "defaultRecipient": "",
+      "replyMailbox": "",
+      "forwardRoute": "category",
+      "forwardContent": "details",
+      "forwardTemplates": {
+        "notice": {
+          "subject": "官网咨询 [{{id}}] · {{category}}",
+          "body": "收到一条新的官网咨询。\n咨询编号：{{id}}\n咨询类型：{{category}}\n\n在后台查看：{{link}}"
+        },
+        "details": {
+          "subject": "官网咨询 [{{id}}] · {{category}}",
+          "body": "咨询编号：{{id}}\n姓名：{{name}}\n邮箱：{{email}}\n公司：{{company}}\n国家或地区：{{country}}\n语言：{{locale}}\n\n{{message}}\n\n在后台查看：{{link}}"
+        }
+      },
+      "replyRoute": "default"
+    }
+  }
+}

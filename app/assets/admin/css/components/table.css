@@ -1,0 +1,46 @@
+/* 后台components/table样式，由 main.css 统一加载，使用后台容器显式限定作用域。 */
+.admin-shell[data-admin-shell] .admin-pagination {
+    justify-content: flex-end;
+    background: white;
+    border: 1px solid #d3dbe4;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.admin-shell[data-admin-shell] .admin-table-wrap {
+    overflow-x: auto;
+}
+
+.admin-shell[data-admin-shell] :where(.admin-table-wrap) table {
+    width: 100%;
+    background: white;
+    border-collapse: collapse;
+    border: 1px solid #dce1e7;
+}
+
+.admin-shell[data-admin-shell] :where(.admin-table-wrap) th, .admin-shell[data-admin-shell] :where(.admin-table-wrap) td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #dce1e7;
+    vertical-align: top;
+}
+
+.admin-shell[data-admin-shell] :where(.admin-table-wrap) th {
+    color: #405166;
+    background: #f2f5f8;
+    white-space: nowrap;
+}
+
+.admin-shell[data-admin-shell] .admin-table-actions, .admin-shell[data-admin-shell] .admin-table-time, .admin-shell[data-admin-shell] .admin-table-status {
+    white-space: nowrap;
+}
+
+.admin-shell[data-admin-shell] .admin-table-actions > *, .admin-shell[data-admin-shell] .admin-table-actions .admin-button {
+    margin-right: 6px;
+}
+
+@media (max-width: 700px) {
+    .admin-shell[data-admin-shell] .admin-pagination {
+        justify-content: flex-start;
+    }
+}

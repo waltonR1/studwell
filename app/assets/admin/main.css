@@ -1,0 +1,9 @@
+/* 后台公共样式统一入口：按基础、控件、布局与公共业务外观的顺序加载。 */
+@import './css/foundation/base.css';
+@import './css/components/controls.css';
+@import './css/components/table.css';
+@import './css/components/dialog.css';
+@import './css/layout/shell.css';
+@import './css/foundation/scrollbar.css';
+@import './css/components/workbench.css';
+@import './css/components/tree.css';

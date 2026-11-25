@@ -1,0 +1,28 @@
+{
+  "extends": "../.nuxt/tsconfig.node.json",
+  "compilerOptions": {
+    "composite": false,
+    "noEmit": true,
+    "types": [
+      "node"
+    ],
+    "paths": {
+      "#shared/*": [
+        "../shared/*"
+      ],
+      "#imports": [
+        "../.nuxt/imports.d.ts"
+      ],
+      "~/*": [
+        "../app/*"
+      ],
+      "#section-renderer-inventory": [
+        "../scripts/build-section-renderer-inventory.ts"
+      ]
+    }
+  },
+  "include": [
+    "database/**/*.ts"
+  ],
+  "exclude": []
+}

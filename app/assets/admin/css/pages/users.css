@@ -1,0 +1,777 @@
+/* 账号模块视觉层。仅匹配 .admin-shell .admin-module.account-page，复用 BF-04 的组件与交互合同。 */
+.admin-shell .admin-module.account-page:is(.account-list, .account-detail) {
+    --account-line: #e5eaf1;
+    --account-muted: #778497;
+    --account-ink: #24364b;
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    box-sizing: border-box;
+    margin-inline: 0;
+    padding: 28px clamp(16px, 2vw, 32px) 48px;
+}
+
+.admin-shell .admin-module.account-page .account-back-link {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    min-height: 36px;
+    box-sizing: border-box;
+    padding: 7px 12px;
+    margin-bottom: 13px;
+    border: 1px solid #cbdcf0;
+    border-radius: 7px;
+    background: #f0f6fd;
+    color: #245b91;
+    font-size: 13px;
+    font-weight: 550;
+    line-height: 20px;
+    text-decoration: none;
+}
+
+.admin-shell .admin-module.account-page .account-back-link:hover {
+    border-color: #8eafd2;
+    background: #e2eefb;
+    color: #194b7c;
+}
+
+.admin-shell .admin-module.account-page .account-back-link:focus-visible {
+    outline: 2px solid #3269a5;
+    outline-offset: 3px;
+}
+
+.admin-shell .admin-module.account-page .account-identity, .admin-shell .admin-module.account-page .account-detail-main {
+    min-width: 0;
+}
+
+.admin-shell .admin-module.account-page .admin-section {
+    margin: 0 0 22px;
+    padding: 24px;
+    border: 1px solid var(--account-line);
+    border-radius: 12px;
+    box-shadow: 0 3px 12px #26364b03;
+}
+
+.admin-shell .admin-module.account-page .account-audit {
+    display: grid;
+    gap: 16px;
+    margin: 24px 0 0;
+    padding-top: 22px;
+    border-top: 1px solid var(--account-line);
+    text-align: left;
+}
+
+.admin-shell .admin-module.account-page .account-audit > div {
+    min-width: 0;
+}
+
+.admin-shell .admin-module.account-page .account-audit dt {
+    margin-bottom: 4px;
+    color: #8b97a7;
+    font-size: 11px;
+}
+
+.admin-shell .admin-module.account-page .account-audit dd {
+    margin: 0;
+    color: #5d6e83;
+    font-size: 12px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+    font-variant-numeric: tabular-nums;
+}
+
+.admin-shell .admin-module.account-page .account-identity .admin-feedback {
+    margin-top: 20px;
+    margin-bottom: 0;
+    padding: 12px;
+    border: 0;
+    background: #f2f6fb;
+    color: #6a7e96;
+    font-size: 12px;
+    text-align: left;
+    border-radius: 8px;
+}
+
+.admin-shell .admin-module.account-page .account-panel > h2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 8px;
+    color: var(--account-ink);
+    font-size: 16px;
+    font-weight: 650;
+}
+
+.admin-shell .admin-module.account-page .account-save-state {
+    padding: 3px 8px;
+    border-radius: 5px;
+    background: #f3f6f9;
+    color: #8a97a7;
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.admin-shell .admin-module.account-page .account-save-state-dirty {
+    background: #fff4df;
+    color: #976616;
+}
+
+.admin-shell .admin-module.account-page .account-section-description, .admin-shell .admin-module.account-page .account-panel > .admin-help {
+    margin: 0 0 20px;
+    color: #8491a2;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.admin-shell .admin-module.account-page .account-profile-form, .admin-shell .admin-module.account-page .account-create-form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px 20px;
+    max-width: none;
+    padding: 16px 0 0;
+}
+
+.admin-shell .admin-module.account-page .account-profile-form {
+    width: 100%;
+    max-width: none;
+}
+
+.admin-shell .admin-module.account-page .account-role-grid {
+    max-width: 1040px;
+}
+
+.admin-shell .admin-module.account-page .admin-fields > label {
+    min-width: 0;
+    color: #526278;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.admin-shell .admin-module.account-page .admin-fields > label > div, .admin-shell .admin-module.account-page .admin-fields .admin-input {
+    width: 100%;
+    min-width: 0;
+}
+
+.admin-shell .admin-module.account-page .admin-field-error {
+    min-height: 18px;
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.admin-shell .admin-module.account-page input[type='checkbox'] {
+    width: 16px;
+    height: 16px;
+    flex: 0 0 16px;
+    margin: 0;
+    accent-color: #235a93;
+    cursor: pointer;
+}
+
+.admin-shell .admin-module.account-page input[type='checkbox']:disabled {
+    cursor: default;
+}
+
+.admin-shell .admin-module.account-page .account-full-width {
+    grid-column: 1 / -1;
+}
+
+.admin-shell .admin-module.account-page .account-panel-actions {
+    display: flex;
+    justify-content: flex-end;
+    grid-column: 1 / -1;
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px solid #edf1f6;
+}
+
+.admin-shell .admin-module.account-page .account-role-grid {
+    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr));
+    margin: 20px 0 0;
+}
+
+.admin-shell .admin-module.account-page .account-role-card {
+    gap: 12px;
+    padding: 15px;
+    border: 1px solid #e2e8f0;
+    border-radius: 9px;
+    background: #fff;
+    cursor: pointer;
+    transition: border-color .15s, background-color .15s;
+}
+
+.admin-shell .admin-module.account-page .account-role-card:hover {
+    border-color: #b8cbe0;
+    background: #fafcfe;
+}
+
+.admin-shell .admin-module.account-page .account-role-selected {
+    border-color: #9fbad8;
+    background: #f1f6fc;
+}
+
+.admin-shell .admin-module.account-page .account-role-disabled {
+    background: #f8fafc;
+    opacity: .65;
+    cursor: default;
+}
+
+.admin-shell .admin-module.account-page .account-role-copy {
+    display: grid;
+    gap: 4px;
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.admin-shell .admin-module.account-page .account-role-copy strong {
+    color: #42566f;
+    font-size: 13px;
+    font-weight: 550;
+}
+
+.admin-shell .admin-module.account-page .account-role-copy small {
+    color: #8b98a9;
+    font-size: 11px;
+}
+
+.admin-shell .admin-module.account-page .account-assigned-roles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0;
+    margin: 18px 0 0;
+    list-style: none;
+}
+
+.admin-shell .admin-module.account-page .account-assigned-roles > li {
+    padding: 7px 12px;
+    background: #f0f5fb;
+    border: 1px solid #e3ebf5;
+    border-radius: 7px;
+    color: #526f91;
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+.admin-shell .admin-module.account-page .account-danger-panel {
+    border-color: #eedfe2;
+    background: #fffdfd;
+}
+
+.admin-shell .admin-module.account-page .account-danger-panel > h2 {
+    color: #965463;
+}
+
+.admin-shell .admin-module.account-page .account-security-row > p {
+    margin: 0;
+    color: #8a7a80;
+    font-size: 12px;
+}
+
+.admin-shell .admin-module.account-page .account-facts {
+    display: grid;
+    gap: 0;
+    margin: 14px 0 0;
+}
+
+.admin-shell .admin-module.account-page .account-facts > div {
+    display: grid;
+    grid-template-columns: 100px minmax(0, 1fr);
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f3f7;
+}
+
+.admin-shell .admin-module.account-page .account-facts > div:last-child {
+    border-bottom: 0;
+}
+
+.admin-shell .admin-module.account-page .account-facts dt {
+    color: #8693a4;
+    font-size: 13px;
+}
+
+.admin-shell .admin-module.account-page .account-facts dd {
+    margin: 0;
+    color: #455a72;
+    overflow-wrap: anywhere;
+}
+
+.admin-shell .admin-module.account-page .account-list-card {
+    min-width: 0;
+    border: 1px solid var(--account-line);
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 3px 12px #26364b03;
+}
+
+.admin-shell .admin-module.account-page .account-list-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 22px 22px 0;
+}
+
+.admin-shell .admin-module.account-page .account-list-heading h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    color: #344960;
+    font-size: 15px;
+    font-weight: 650;
+}
+
+.admin-shell .admin-module.account-page .account-list-heading p {
+    margin: 0;
+    color: #96a1af;
+    font-size: 12px;
+}
+
+.admin-shell .admin-module.account-page .account-result-count {
+    padding: 2px 8px;
+    border-radius: 5px;
+    background: #f0f4f9;
+    color: #7c8ca1;
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.admin-shell .admin-module.account-page .account-filters {
+    gap: 10px;
+    margin: 0;
+    padding: 20px 22px;
+    border: 0;
+    background: transparent;
+}
+
+.admin-shell .admin-module.account-page .account-search {
+    position: relative;
+    flex: 0 1 310px;
+    min-width: 180px;
+}
+
+.admin-shell .admin-module.account-page .account-search > :last-child {
+    display: block;
+    width: 100%;
+}
+
+.admin-shell .admin-module.account-page .account-search .admin-input {
+    width: 100%;
+    padding-left: 35px;
+    background: #fafbfd;
+}
+
+.admin-shell .admin-module.account-page .account-search-icon {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 1;
+    width: 16px;
+    height: 16px;
+    color: #94a2b3;
+    pointer-events: none;
+}
+
+.admin-shell .admin-module.account-page .admin-table-wrap {
+    border-top: 1px solid var(--account-line);
+}
+
+.admin-shell .admin-module.account-page table {
+    border: 0;
+    table-layout: fixed;
+}
+
+.admin-shell .admin-module.account-page th {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--account-line);
+    background: #f8fafc;
+    color: #8a97a6;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.admin-shell .admin-module.account-page td {
+    padding: 17px 16px;
+    border-bottom: 1px solid #edf1f6;
+    color: #586d84;
+    font-size: 13px;
+    vertical-align: middle;
+}
+
+.admin-shell .admin-module.account-page tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.admin-shell .admin-module.account-page tbody tr:hover {
+    background: #fbfcfe;
+}
+
+.admin-shell .admin-module.account-page .account-table-identity {
+    display: flex;
+    gap: 11px;
+    align-items: center;
+    min-width: 150px;
+}
+
+.admin-shell .admin-module.account-page .account-table-identity strong {
+    display: block;
+    max-width: 220px;
+    color: #3e526c;
+    font-size: 13px;
+    font-weight: 550;
+    overflow-wrap: anywhere;
+}
+
+.admin-shell .admin-module.account-page .account-root-label {
+    display: inline-block;
+    margin-left: 4px;
+    padding: 1px 5px;
+    border-radius: 4px;
+    background: #eef0f7;
+    color: #7b83a2;
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.admin-shell .admin-module.account-page .account-email {
+    overflow-wrap: anywhere;
+}
+
+.admin-shell .admin-module.account-page .admin-table-time {
+    color: #8b98a8;
+    font-size: 12px;
+    font-variant-numeric: tabular-nums;
+}
+
+.admin-shell .admin-module.account-page .account-row-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.admin-shell .admin-module.account-page .admin-table-actions .admin-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    min-height: 32px;
+    margin: 0;
+    padding: 5px 10px;
+    gap: 6px;
+    border: 1px solid #cbdcf0;
+    border-radius: 6px;
+    background: #f0f6fd;
+    color: #245b91;
+    font-size: 12px;
+    font-weight: 550;
+    line-height: 20px;
+    box-sizing: border-box;
+}
+
+.admin-shell .admin-module.account-page .admin-table-actions .account-delete-action {
+    border-color: #efcbd1;
+    background: #fff3f4;
+    color: #ad354b;
+}
+
+.admin-shell .admin-module.account-page .admin-table-actions .account-delete-action:hover:not(:disabled) {
+    border-color: #d8919f;
+    background: #fde7eb;
+    color: #93273d;
+}
+
+.admin-shell .admin-module.account-page .admin-pagination {
+    margin: 0;
+    padding: 15px 22px;
+    gap: 10px;
+    border: 0;
+    border-top: 1px solid var(--account-line);
+    background: transparent;
+    border-radius: 0 0 12px 12px;
+}
+
+.admin-shell .admin-module.account-page .admin-pagination > span {
+    margin-right: auto;
+    color: #8a98aa;
+    font-size: 12px;
+}
+
+.admin-shell .admin-module.account-page .admin-pagination select, .admin-shell .admin-module.account-page .admin-pagination .admin-button {
+    min-height: 32px;
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+.admin-shell .admin-module.account-page .account-list-card > .admin-feedback {
+    margin: 12px 22px;
+}
+
+.admin-shell .admin-module.account-page .admin-dialog {
+    border: 1px solid #e1e8f1;
+    border-radius: 14px;
+    box-shadow: 0 25px 90px #14294030;
+    padding: 28px;
+}
+
+.admin-shell .admin-module.account-page .admin-dialog-actions {
+    margin-top: 16px;
+    padding-top: 18px;
+    border-top: 1px solid #edf1f6;
+}
+
+.admin-shell .admin-module.account-page .account-col-identity {
+    width: 25%;
+}
+
+.admin-shell .admin-module.account-page .account-col-roles {
+    width: 24%;
+}
+
+.admin-shell .admin-module.account-page .account-col-status {
+    width: 12%;
+}
+
+.admin-shell .admin-module.account-page .account-col-password {
+    width: 9%;
+}
+
+.admin-shell .admin-module.account-page .account-col-time {
+    width: 22%;
+}
+
+.admin-shell .admin-module.account-page .account-col-actions {
+    width: 17%;
+}
+
+.admin-shell .admin-module.account-page .account-list-card th:first-child, .admin-shell .admin-module.account-page .account-list-card td:first-child {
+    padding-inline-start: 22px;
+}
+
+.admin-shell .admin-module.account-page .account-list-card th:last-child, .admin-shell .admin-module.account-page .account-list-card td:last-child {
+    padding-inline-end: 22px;
+}
+
+/* 账号筛选、分页尺寸与状态区布局；公共控件外观由 common 组件维护。 */
+.admin-shell .admin-module.account-page .account-page-size {
+    min-width: 86px;
+}
+
+.admin-shell .admin-module.account-page .account-page-size .admin-select-trigger {
+    min-height: 32px;
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+.admin-shell .admin-module.account-page .account-required {
+    color: #dc2626;
+    font-weight: 600;
+}
+
+.admin-shell .admin-module.account-page .account-remark {
+    width: 100%;
+    resize: vertical;
+    min-height: 88px;
+    font: inherit;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.admin-shell .admin-module.account-page .account-remark-text {
+    white-space: pre-wrap;
+}
+
+.admin-shell .admin-module.account-page .account-field-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.admin-shell .admin-module.account-page .account-status-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-top: 18px;
+    padding: 18px 20px;
+    background: #f7f9fc;
+    border: 1px solid #e7edf4;
+    border-radius: 10px;
+}
+
+.admin-shell .admin-module.account-page .account-status-title {
+    color: #344a63;
+    font-size: 14px;
+    font-weight: 550;
+}
+
+.admin-shell .admin-module.account-page .account-status-description {
+    margin: 6px 0 0;
+    color: #778497;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.admin-shell .admin-module.account-page .account-security-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px 24px;
+}
+
+.admin-shell .admin-module.account-page .account-security-row > .admin-button {
+    flex-shrink: 0;
+}
+
+.admin-shell .admin-module.account-page .account-row-actions .admin-button:hover:not(:disabled):not(.account-delete-action):not(.account-root-view) {
+    border-color: #8eafd2;
+    background: #e2eefb;
+    color: #194b7c;
+}
+
+.admin-shell .admin-module.account-page .account-row-actions .admin-button:focus-visible {
+    outline: 2px solid #3269a5;
+    outline-offset: 2px;
+}
+
+/* 响应式与减少动态效果 */
+@media (max-width: 1100px) {
+    .admin-shell .admin-module.account-page .account-profile-form {
+        grid-template-columns: minmax(0, 1fr);
+        max-width: none;
+    }
+
+    .admin-shell .admin-module.account-page .account-detail-grid {
+        grid-template-columns: 220px minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    .admin-shell .admin-module.account-page .admin-section {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 760px) {
+    .admin-shell .admin-module.account-page:is(.account-list, .account-detail) {
+        padding: 24px 16px 36px;
+    }
+
+    .admin-shell .admin-module.account-page .account-detail-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0;
+    }
+
+    .admin-shell .admin-module.account-page .account-audit {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .admin-shell .admin-module.account-page .account-list-heading {
+        padding: 18px 16px 0;
+    }
+
+    .admin-shell .admin-module.account-page .account-filters {
+        padding: 16px;
+    }
+
+    .admin-shell .admin-module.account-page .account-search {
+        flex: 1 1 100%;
+    }
+
+    .admin-shell .admin-module.account-page .admin-pagination {
+        padding-inline: 16px;
+    }
+}
+
+@media (max-width: 520px) {
+    .admin-shell .admin-module.account-page .account-profile-form, .admin-shell .admin-module.account-page .account-create-form {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .admin-shell .admin-module.account-page .account-list-heading p {
+        display: none;
+    }
+
+    .admin-shell .admin-module.account-page .admin-dialog {
+        padding: 22px 18px;
+    }
+
+    .admin-shell .admin-module.account-page .account-save-state {
+        max-width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .admin-shell .admin-module.account-page .account-role-card {
+        transition: none;
+    }
+}
+
+@media (max-width: 520px) {
+    .admin-shell .admin-module.account-page .account-status-row {
+        padding: 14px;
+        gap: 12px;
+    }
+}
+
+/* 筛选栏操作与输入控件对齐。 */
+.admin-shell .admin-module.account-page .account-filters > .admin-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    box-sizing: border-box;
+    padding: 8px 16px;
+    border-radius: 8px;
+    line-height: 22px;
+    white-space: nowrap;
+}
+
+.admin-shell .admin-module.account-page .account-filters > .account-create-button {
+    gap: 8px;
+    border: 1px solid #245b91;
+    background: #245b91;
+    color: #fff;
+    box-shadow: 0 1px 2px #1d45631a;
+}
+
+.admin-shell .admin-module.account-page .account-filters > .account-create-button:hover:not(:disabled) {
+    border-color: #194b7c;
+    background: #194b7c;
+}
+
+.admin-shell .admin-module.account-page .account-filters > .account-create-button:focus-visible {
+    outline: 2px solid #3269a5;
+    outline-offset: 3px;
+}
+
+.admin-shell .admin-module.account-page .account-create-button .account-button-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.admin-shell .admin-module.account-page .account-role-summary > span {
+    display: block;
+    margin-block: 3px;
+    overflow-wrap: anywhere;
+}
+
+.admin-shell .admin-module.account-page .account-muted {
+    color: #8b98a8;
+}
+
+.admin-shell .admin-module.account-page .account-password-pending {
+    background: #fff4df;
+    color: #976616;
+}
+
+.admin-shell .admin-module.account-page .account-audit {
+    gap: 12px;
+    margin-top: 18px;
+    padding-top: 18px;
+}

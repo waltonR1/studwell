@@ -1,0 +1,21 @@
+// Server API 的受控错误码契约；服务端状态及消息、前端操作提示分别维护。
+export const apiErrorCodes = [
+    'INVALID_INPUT',
+    'INVALID_JSON',
+    'UNAUTHENTICATED',
+    'AUTH_FAILED',
+    'PASSWORD_CHANGE_REQUIRED',
+    'CSRF_REJECTED',
+    'REQUEST_TOO_LARGE',
+    'FORBIDDEN',
+    'NOT_FOUND',
+    'CONFLICT',
+    'UNSUPPORTED_MEDIA_TYPE',
+    'RATE_LIMITED',
+    'EXPORT_LIMIT_EXCEEDED',
+    'INTERNAL_ERROR',
+    'TASK_BUSY',
+    'TASK_FINISHED',
+    'TASK_SCHEDULER_OFFLINE',
+    'TASK_EXECUTION_DISABLED',
+] as const

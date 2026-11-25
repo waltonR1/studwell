@@ -1,0 +1,132 @@
+[
+  {
+    "scope": "public",
+    "key": "guide.document",
+    "componentPath": "app/components/public/sections/guide/DocumentSection.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "guide.document",
+    "componentPath": "app/components/public/sections/guide/DocumentSection.vue"
+  },
+  {
+    "scope": "public",
+    "key": "content.text",
+    "componentPath": "app/components/public/sections/common/TextContent.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "content.text",
+    "componentPath": "app/components/admin/preview/templates/TextContent.vue"
+  },
+  {
+    "scope": "public",
+    "key": "guide.introduction",
+    "componentPath": "app/components/public/sections/guide/IntroductionSection.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "guide.introduction",
+    "componentPath": "app/components/public/sections/guide/IntroductionSection.vue"
+  },
+  {
+    "scope": "public",
+    "key": "content.sidebar-nav",
+    "componentPath": "app/components/public/sections/common/SidebarNavigation.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "content.sidebar-nav",
+    "componentPath": "app/components/public/sections/common/SidebarNavigation.vue"
+  },
+  {
+    "scope": "public",
+    "key": "careers.positionsSection",
+    "componentPath": "app/components/public/sections/careers/PositionsSection.vue"
+  },
+  {
+    "scope": "public",
+    "key": "contact.detailsSection",
+    "componentPath": "app/components/public/sections/contact/ContactSection.vue"
+  },
+  {
+    "scope": "public",
+    "key": "home.news",
+    "componentPath": "app/components/public/sections/home/NewsSection.vue"
+  },
+  {
+    "scope": "public",
+    "key": "news.list",
+    "componentPath": "app/components/public/sections/news/catalog/ListSection.vue"
+  },
+  {
+    "scope": "public",
+    "key": "news.article",
+    "componentPath": "app/components/public/sections/news/detail/ArticleSection.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "careers.positionsSection",
+    "componentPath": "app/components/public/sections/careers/PositionsSection.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "contact.detailsSection",
+    "componentPath": "app/components/public/sections/contact/ContactDetails.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "home.news",
+    "componentPath": "app/components/public/sections/home/NewsSection.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "news.list",
+    "componentPath": "app/components/public/sections/news/catalog/ListSection.vue"
+  },
+  {
+    "scope": "preview",
+    "key": "news.article",
+    "componentPath": "app/components/public/sections/news/detail/ArticleSection.vue"
+  },
+  {
+    "key": "guide.collection",
+    "scope": "public",
+    "componentPath": "app/components/public/sections/guide/CollectionSection.vue"
+  },
+  {
+    "key": "guide.collection",
+    "scope": "preview",
+    "componentPath": "app/components/public/sections/guide/CollectionSection.vue"
+  },
+  {
+    "key": "guide.media",
+    "scope": "public",
+    "componentPath": "app/components/public/sections/guide/MediaSection.vue"
+  },
+  {
+    "key": "guide.media",
+    "scope": "preview",
+    "componentPath": "app/components/public/sections/guide/MediaSection.vue"
+  },
+  {
+    "key": "guide.structure",
+    "scope": "public",
+    "componentPath": "app/components/public/sections/guide/StructureSection.vue"
+  },
+  {
+    "key": "guide.structure",
+    "scope": "preview",
+    "componentPath": "app/components/public/sections/guide/StructureSection.vue"
+  },
+  {
+    "key": "content.page-nav",
+    "scope": "public",
+    "componentPath": "app/components/public/sections/common/PageGroupNavigation.vue"
+  },
+  {
+    "key": "content.page-nav",
+    "scope": "preview",
+    "componentPath": "app/components/public/sections/common/PageGroupNavigation.vue"
+  }
+]

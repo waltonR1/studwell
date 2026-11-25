@@ -1,0 +1,185 @@
+/* 角色权限与菜单授权的专属展示。 */
+
+.admin-shell .admin-view-page .authorization-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.admin-shell .admin-view-page .authorization-heading p {
+    margin: 0;
+    color: #778497;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.admin-shell .admin-view-page .authorization-tools {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+    margin: 0 0 18px;
+}
+
+.admin-shell .admin-view-page .authorization-tools > :first-child {
+    flex: 0 1 360px;
+}
+
+.admin-shell .admin-view-page .authorization-tools label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+}
+
+.admin-shell .admin-view-page .authorization-group {
+    margin: 20px 0;
+}
+
+.admin-shell .admin-view-page .authorization-group h3 {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin: 0 0 10px;
+    font-size: 14px;
+    color: #3e5670;
+}
+
+.admin-shell .admin-view-page .authorization-group h3 small {
+    color: #8492a3;
+    font-weight: 400;
+}
+
+.admin-shell .admin-view-page .authorization-permissions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap: 10px;
+}
+
+.admin-shell .admin-view-page .authorization-option {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    padding: 14px;
+    border: 1px solid #e3eaf2;
+    border-radius: 8px;
+    min-width: 0;
+}
+
+.admin-shell .admin-view-page .authorization-option.is-selected {
+    background: #f2f7fd;
+    border-color: #b8cfe6;
+}
+
+.admin-shell .admin-view-page .authorization-option span {
+    display: grid;
+    gap: 4px;
+}
+
+.admin-shell .admin-view-page .authorization-option strong {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.admin-shell .admin-view-page .authorization-option small {
+    color: #8994a3;
+    font-size: 11px;
+}
+
+.admin-shell .admin-view-page .authorization-option code {
+    display: block;
+    flex-basis: 100%;
+    color: #8492a3;
+    font-size: 11px;
+    overflow-wrap: anywhere;
+}
+
+.admin-shell .admin-view-page .authorization-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 18px;
+    margin-top: 18px;
+    border-top: 1px solid #edf1f6;
+}
+
+.admin-shell .admin-view-page .authorization-menu-list {
+    border: 1px solid #e3eaf2;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.admin-shell .admin-view-page .authorization-menu-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 13px 14px;
+    border-bottom: 1px solid #edf1f6;
+    font-size: 13px;
+}
+
+.admin-shell .admin-view-page .authorization-menu-row:last-child {
+    border-bottom: 0;
+}
+
+.admin-shell .admin-view-page .authorization-menu-choice {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.admin-shell .admin-view-page .authorization-menu-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    color: #8290a1;
+}
+
+.admin-shell .admin-view-page .authorization-menu-tags small {
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: #f1f5f9;
+    font-size: 11px;
+}
+
+.admin-shell .admin-module.admin-view-page .authorization-heading h2 {
+    margin-bottom: 8px;
+}
+
+.admin-shell .admin-module.admin-view-page .authorization-option {
+    cursor: pointer;
+    transition: border-color .15s, background-color .15s;
+}
+
+.admin-shell .admin-module.admin-view-page .authorization-option:hover {
+    border-color: #b8cbe0;
+    background: #fafcfe;
+}
+
+.admin-shell .admin-module.admin-view-page .authorization-option.is-selected {
+    border-color: #9fbad8;
+    background: #f1f6fc;
+}
+
+@media (max-width: 760px) {
+    .admin-shell .admin-view-page .authorization-tools > :first-child {
+        flex-basis: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .admin-shell .admin-module.admin-view-page .authorization-option {
+        transition: none;
+    }
+}
+
+.admin-shell .admin-module.admin-view-page .authorization-tools {
+    padding: 0;
+    border: 0;
+    background: transparent;
+}

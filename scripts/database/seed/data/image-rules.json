@@ -1,0 +1,86 @@
+{
+  "logo": {
+    "mobileEditable": true,
+    "maxZoom": 3,
+    "opacity": {
+      "value": 1,
+      "min": 0.2,
+      "max": 1,
+      "editable": true
+    },
+    "brightness": {
+      "value": 1,
+      "min": 0.5,
+      "max": 1.5,
+      "editable": true
+    },
+    "label": "完整图片",
+    "fit": "contain",
+    "desktopRatio": 1.3333333333333333,
+    "mobileRatio": 1.3333333333333333,
+    "overlay": false
+  },
+  "favicon": {
+    "label": "浏览器图标",
+    "fit": "contain",
+    "desktopRatio": 1,
+    "mobileRatio": 1,
+    "mobileEditable": false,
+    "maxZoom": 1,
+    "opacity": {
+      "value": 1,
+      "min": 1,
+      "max": 1,
+      "editable": false
+    },
+    "brightness": {
+      "value": 1,
+      "min": 1,
+      "max": 1,
+      "editable": false
+    },
+    "overlay": false
+  },
+  "newsCover": {
+    "mobileEditable": true,
+    "maxZoom": 3,
+    "opacity": {
+      "value": 1,
+      "min": 0.2,
+      "max": 1,
+      "editable": true
+    },
+    "brightness": {
+      "value": 1,
+      "min": 0.5,
+      "max": 1.5,
+      "editable": true
+    },
+    "label": "图片",
+    "fit": "cover",
+    "desktopRatio": 1.7777777777777777,
+    "mobileRatio": 1.7777777777777777,
+    "overlay": false
+  },
+  "newsBody": {
+    "mobileEditable": true,
+    "maxZoom": 3,
+    "opacity": {
+      "value": 1,
+      "min": 0.2,
+      "max": 1,
+      "editable": true
+    },
+    "brightness": {
+      "value": 1,
+      "min": 0.5,
+      "max": 1.5,
+      "editable": true
+    },
+    "label": "完整图片",
+    "fit": "contain",
+    "desktopRatio": 1.3333333333333333,
+    "mobileRatio": 1.3333333333333333,
+    "overlay": false
+  }
+}

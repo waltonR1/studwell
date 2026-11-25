@@ -1,0 +1,128 @@
+{
+  "photo": {
+    "mobileEditable": true,
+    "maxZoom": 3,
+    "opacity": {
+      "value": 1,
+      "min": 0.2,
+      "max": 1,
+      "editable": true
+    },
+    "brightness": {
+      "value": 1,
+      "min": 0.5,
+      "max": 1.5,
+      "editable": true
+    },
+    "label": "图片",
+    "fit": "cover",
+    "desktopRatio": 1.7777777777777777,
+    "mobileRatio": 1.7777777777777777,
+    "overlay": false
+  },
+  "contain": {
+    "mobileEditable": true,
+    "maxZoom": 3,
+    "opacity": {
+      "value": 1,
+      "min": 0.2,
+      "max": 1,
+      "editable": true
+    },
+    "brightness": {
+      "value": 1,
+      "min": 0.5,
+      "max": 1.5,
+      "editable": true
+    },
+    "label": "完整图片",
+    "fit": "contain",
+    "desktopRatio": 1.3333333333333333,
+    "mobileRatio": 1.3333333333333333,
+    "overlay": false
+  },
+  "icon": {
+    "label": "浏览器图标",
+    "fit": "contain",
+    "desktopRatio": 1,
+    "mobileRatio": 1,
+    "mobileEditable": false,
+    "maxZoom": 1,
+    "opacity": {
+      "value": 1,
+      "min": 1,
+      "max": 1,
+      "editable": false
+    },
+    "brightness": {
+      "value": 1,
+      "min": 1,
+      "max": 1,
+      "editable": false
+    },
+    "overlay": false
+  },
+  "column-banner": {
+    "mobileEditable": true,
+    "maxZoom": 3,
+    "opacity": {
+      "value": 1,
+      "min": 0.2,
+      "max": 1,
+      "editable": true
+    },
+    "brightness": {
+      "value": 1,
+      "min": 0.5,
+      "max": 1.5,
+      "editable": true
+    },
+    "label": "栏目横幅",
+    "desktopRatio": 1.7777777777777777,
+    "mobileRatio": 1.6,
+    "overlay": false,
+    "fit": "cover"
+  },
+  "cover": {
+    "mobileEditable": true,
+    "maxZoom": 3,
+    "opacity": {
+      "value": 1,
+      "min": 0.2,
+      "max": 1,
+      "editable": true
+    },
+    "brightness": {
+      "value": 1,
+      "min": 0.5,
+      "max": 1.5,
+      "editable": true
+    },
+    "label": "封面图片",
+    "desktopRatio": 1.7777777777777777,
+    "mobileRatio": 1.7777777777777777,
+    "overlay": false,
+    "fit": "cover"
+  },
+  "link-card": {
+    "mobileEditable": true,
+    "maxZoom": 3,
+    "opacity": {
+      "value": 1,
+      "min": 0.2,
+      "max": 1,
+      "editable": true
+    },
+    "brightness": {
+      "value": 1,
+      "min": 0.5,
+      "max": 1.5,
+      "editable": true
+    },
+    "desktopRatio": 1.6,
+    "mobileRatio": 2,
+    "overlay": false,
+    "label": "链接卡片图片",
+    "fit": "cover"
+  }
+}

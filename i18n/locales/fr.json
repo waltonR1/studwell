@@ -1,0 +1,87 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "news": "Actualités",
+    "contact": "Contact"
+  },
+  "common": {
+    "language": "Langue",
+    "navigation": "Navigation principale",
+    "menu": "Ouvrir le menu",
+    "close": "Fermer le menu",
+    "skip": "Aller au contenu",
+    "breadcrumb": "Fil d’Ariane",
+    "menuLabel": "Menu",
+    "closeLabel": "Fermer",
+    "loadingHome": "Préparation de la page d’accueil"
+  },
+  "news": {
+    "detailPreview": "Un article est nécessaire pour prévisualiser cette section.",
+    "viewCount": "Vues : {count}",
+    "source": "Source",
+    "listSection": {
+      "filterLabel": "Catégories d’actualités",
+      "count": "{count} articles",
+      "pagination": "Pages des actualités",
+      "failed": "Impossible de charger les actualités."
+    },
+    "contents": "Sommaire"
+  },
+  "contact": {
+    "formSection": {
+      "invalidEmail": "Saisissez une adresse e-mail valide, par exemple name{'@'}example.com.",
+      "title": "Présentez votre demande",
+      "name": "Nom",
+      "company": "Entreprise",
+      "email": "Email",
+      "country": "Pays / région",
+      "message": "Message",
+      "note": "Décrivez votre besoin et indiquez votre adresse e-mail.",
+      "category": "Type de demande",
+      "optional": "Facultatif",
+      "chooseCategory": "Sélectionnez un type de demande",
+      "categoryChanged": "Ce type de demande n’est plus disponible. Veuillez en choisir un autre.",
+      "submit": "Envoyer la demande",
+      "submitting": "Envoi en cours…",
+      "received": "Demande reçue. Référence : {id}.",
+      "failed": "Impossible d’envoyer la demande. Réessayez ou utilisez les coordonnées de cette page.",
+      "rateLimited": "Trop de demandes. Réessayez plus tard."
+    }
+  },
+  "search": {
+    "title": "Recherche",
+    "intro": "Recherchez des produits, des références, des actualités et des activités.",
+    "label": "Termes de recherche",
+    "placeholder": "Produit, référence ou mot-clé",
+    "submit": "Rechercher",
+    "clear": "Effacer la recherche",
+    "hint": "Essayez un nom de produit, une référence de norme ou une activité.",
+    "filterLabel": "Types de résultats",
+    "resultCount": "Résultats pour « {query} » : {count}",
+    "loading": "Chargement de la recherche…",
+    "failed": "La recherche est indisponible",
+    "retryHint": "Vérifiez votre connexion et réessayez.",
+    "retry": "Réessayer",
+    "emptyHint": "Aucun contenu trouvé. Essayez un autre mot-clé.",
+    "tooLong": "Saisissez au maximum 100 caractères.",
+    "invalid": "Saisissez un terme contenant des lettres ou des chiffres.",
+    "pagination": "Pages de résultats",
+    "previous": "Page précédente",
+    "next": "Page suivante",
+    "goToPage": "Page {page}",
+    "pageCount": "Page {page} sur {count}",
+    "noScript": "La recherche nécessite JavaScript. Vous pouvez aussi consulter nos produits ou nos actualités.",
+    "types": {
+      "all": "Tout",
+      "news": "Actualités",
+      "pages": "Pages"
+    },
+    "initialPrompt": "Saisissez un mot-clé pour trouver votre contenu"
+  },
+  "careers": {
+    "status": {
+      "loading": "Chargement des postes…",
+      "error": "Impossible de charger les postes. Réessayez plus tard."
+    }
+  }
+}

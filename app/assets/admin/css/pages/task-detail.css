@@ -1,0 +1,246 @@
+/* 定时任务TaskRunDetailDialog所属区块样式，以 scoped 加载。 */
+
+.task-warning {
+    color: #a67525;
+}
+
+.task-detail-section h3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 0 15px;
+    color: #3d536c;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.task-detail-section h3 > span {
+    color: #94a0af;
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.task-snapshot-plan svg {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+    color: #7b95b2;
+}
+
+.task-detail-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.task-eyebrow {
+    display: block;
+    margin-bottom: 4px;
+    color: #94a0af;
+    font-size: 11px;
+}
+
+.task-detail-heading strong {
+    color: #334d69;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -.5px;
+}
+
+.task-detail-badges {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.task-facts {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px 18px;
+    margin: 0;
+    padding: 18px;
+    border: 1px solid #edf1f6;
+    border-radius: 9px;
+    background: #f8fafc;
+}
+
+.task-facts > div {
+    min-width: 0;
+}
+
+.task-facts dt, .task-retention-summary dt {
+    margin-bottom: 6px;
+    color: #94a0af;
+    font-size: 11px;
+}
+
+.task-facts dd {
+    margin: 0;
+    color: #536c86;
+    font-size: 12px;
+    font-variant-numeric: tabular-nums;
+    overflow-wrap: anywhere;
+    line-height: 1.7;
+}
+
+.task-detail-section {
+    margin-top: 22px;
+}
+
+.task-retention-summary {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin: 14px 0 0;
+}
+
+.task-retention-summary > div {
+    padding: 12px;
+    background: #f7f9fc;
+    border-radius: 7px;
+}
+
+.task-retention-summary dd {
+    margin: 0;
+    color: #526d89;
+    font-size: 18px;
+    font-weight: 550;
+}
+
+.task-retention-summary dd span {
+    margin-left: 5px;
+    color: #9aa7b7;
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.task-batch-list {
+    overflow: hidden;
+    border: 1px solid #e7edf4;
+    border-radius: 9px;
+}
+
+.task-batch {
+    padding: 13px 15px;
+    border-bottom: 1px solid #edf1f6;
+}
+
+.task-batch:last-child {
+    border-bottom: 0;
+}
+
+.task-batch-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 12px;
+}
+
+.task-batch-heading strong {
+    color: #526b84;
+    font-weight: 550;
+}
+
+.task-batch-heading > span {
+    color: #8a9aac;
+    font-size: 11px;
+}
+
+.task-batch-heading b {
+    margin-right: 3px;
+    color: #3f6286;
+    font-size: 17px;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+}
+
+.task-batch-heading i {
+    font-style: normal;
+    color: #9ba8b8;
+}
+
+.task-batch-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px 16px;
+    margin-top: 7px;
+    color: #97a3b2;
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.task-trace {
+    padding-top: 18px;
+    border-top: 1px solid #edf1f6;
+}
+
+.task-trace h3 a {
+    color: #356a9c;
+    font-size: 11px;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.task-trace h3 a:hover {
+    text-decoration: underline;
+}
+
+.task-trace dl {
+    display: grid;
+    gap: 8px;
+    margin: 0;
+}
+
+.task-trace dl > div {
+    display: grid;
+    grid-template-columns: 64px minmax(0, 1fr);
+    gap: 14px;
+    align-items: baseline;
+}
+
+.task-trace dt {
+    color: #9aa6b5;
+    font-size: 11px;
+}
+
+.task-trace dd {
+    margin: 0;
+    color: #8a9bb0;
+    font-family: ui-monospace, monospace;
+    font-size: 11px;
+    overflow-wrap: anywhere;
+    line-height: 1.7;
+}
+
+@media (max-width: 760px) {
+    .task-facts {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .task-retention-summary {
+        gap: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .task-facts {
+        padding: 13px;
+        gap: 15px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .task-facts dd {
+        font-size: 11px;
+    }
+}

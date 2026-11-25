@@ -1,0 +1,231 @@
+/* 数据字典只补充少量列表和弹窗信息层级，公共结构沿用 components/workbench.css。 */
+.admin-shell .dictionary-page .dictionary-name {
+    display: block;
+    color: #344960;
+    font-size: 13px;
+    font-weight: 550;
+}
+
+.admin-shell .dictionary-page .dictionary-code {
+    color: #65778c;
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+
+.admin-shell .dictionary-page .dictionary-list-help {
+    display: block;
+    margin-top: 5px;
+    color: #8a97a7;
+    font-size: 11px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.admin-shell .dictionary-page .dictionary-dialog-body {
+    display: grid;
+    gap: 20px;
+}
+
+.admin-shell .dictionary-page .dictionary-type-form, .admin-shell .dictionary-page .dictionary-inline-editor {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 18px;
+}
+
+.admin-shell .dictionary-page .dictionary-type-form > label, .admin-shell .dictionary-page .dictionary-inline-editor > label {
+    min-width: 0;
+    color: #526278;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.admin-shell .dictionary-page .dictionary-type-form .admin-input, .admin-shell .dictionary-page .dictionary-inline-editor .admin-input {
+    width: 100%;
+    min-height: 40px;
+    box-sizing: border-box;
+}
+
+.admin-shell .dictionary-page .dictionary-full-width {
+    grid-column: 1 / -1;
+}
+
+.admin-shell .dictionary-page .dictionary-status-row, .admin-shell .dictionary-page .dictionary-item-status {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 13px 16px;
+    border: 1px solid #e4ebf2;
+    border-radius: 9px;
+    background: #f8fafc;
+}
+
+.admin-shell .dictionary-page .dictionary-status-row strong {
+    color: #3b5068;
+    font-size: 13px;
+}
+
+.admin-shell .dictionary-page .dictionary-status-row p {
+    margin: 5px 0 0;
+    color: #7d8a99;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.admin-shell .dictionary-page .dictionary-dialog-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-top: 4px;
+    border-top: 1px solid #edf1f6;
+}
+
+.admin-shell .dictionary-page .dictionary-dialog-heading h3 {
+    margin: 16px 0 4px;
+    color: #324960;
+    font-size: 16px;
+    font-weight: 650;
+}
+
+.admin-shell .dictionary-page .dictionary-dialog-heading p {
+    margin: 0;
+    color: #8491a2;
+    font-size: 12px;
+    line-height: 1.65;
+}
+
+.admin-shell .dictionary-page .dictionary-dialog-heading > .admin-button {
+    margin-top: 13px;
+}
+
+.admin-shell .admin-module.dictionary-page .admin-fields.dictionary-inline-editor {
+    position: relative;
+    width: 100%;
+    max-width: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 18px 20px;
+    gap: 8px 16px;
+    border: 1px solid #dce7f1;
+    border-radius: 10px;
+    background: #f8fbfe;
+}
+
+.admin-shell .dictionary-page .dictionary-inline-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.admin-shell .dictionary-page .dictionary-inline-heading strong {
+    color: #35506b;
+    font-size: 14px;
+}
+
+.admin-shell .dictionary-page .dictionary-inline-heading .admin-button {
+    width: 30px;
+    min-width: 30px;
+    height: 30px;
+    padding: 0;
+}
+
+.admin-shell .dictionary-page .dictionary-item-status {
+    align-self: start;
+    min-height: 40px;
+    box-sizing: border-box;
+    margin-top: 25px;
+    padding: 6px 12px;
+    border: 0;
+    border-radius: 6px;
+    background: #eef4fa;
+    color: #526278;
+    font-size: 13px;
+}
+
+.admin-shell .dictionary-page .dictionary-inline-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding-top: 13px;
+    border-top: 1px solid #e4ebf2;
+}
+
+.admin-shell .dictionary-page .dictionary-form-meta, .admin-shell .dictionary-page .dictionary-contract-note {
+    margin: 0;
+    color: #78889a;
+    font-size: 11px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+.admin-shell .dictionary-page .dictionary-option-toolbar {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 12px;
+    border: 1px solid #e6ecf3;
+    border-radius: 9px;
+    background: #fafbfd;
+}
+
+.admin-shell .dictionary-page .dictionary-option-toolbar .admin-view-search {
+    flex: 1 1 260px;
+}
+
+.admin-shell .dictionary-page .dictionary-filter-summary {
+    margin-inline-start: auto;
+    color: #8491a2;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.admin-shell .dictionary-page .dictionary-option-name {
+    display: block;
+    color: #3f536b;
+    font-size: 13px;
+    font-weight: 550;
+    overflow-wrap: anywhere;
+}
+
+.admin-shell .dictionary-page .dictionary-option-code {
+    display: block;
+    margin-top: 4px;
+    color: #8d99a8;
+    font-size: 11px;
+    overflow-wrap: anywhere;
+}
+
+.admin-shell .dictionary-page .dictionary-sort-value {
+    display: inline-flex;
+    min-width: 30px;
+    justify-content: center;
+    padding: 3px 7px;
+    border-radius: 5px;
+    background: #f1f4f8;
+    color: #68798c;
+    font-size: 12px;
+    font-variant-numeric: tabular-nums;
+}
+
+.admin-shell .dictionary-page .dictionary-option-pagination {
+    padding: 6px 0 0;
+    border-top: 0;
+}
+
+@media (max-width: 660px) {
+    .admin-shell .dictionary-page .dictionary-type-form, .admin-shell .dictionary-page .dictionary-inline-editor {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .admin-shell .dictionary-page .dictionary-option-toolbar .admin-view-search {
+        flex: 1 1 100%;
+    }
+
+    .admin-shell .dictionary-page .dictionary-filter-summary {
+        margin-inline-start: 0;
+    }
+}

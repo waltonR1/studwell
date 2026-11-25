@@ -1,0 +1,96 @@
+/* 无权限页状态展示，保留后台导航；只提供明确的首页返回入口。 */
+.admin-forbidden {
+    display: grid;
+    place-items: center;
+    min-height: calc(100svh - 160px);
+}
+
+.admin-forbidden-card {
+    width: min(100%, 560px);
+    box-sizing: border-box;
+    padding: 44px 32px;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    background: #fff;
+    text-align: center;
+    box-shadow: 0 4px 20px #243b5305;
+}
+
+.admin-forbidden-icon {
+    display: grid;
+    place-items: center;
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 22px;
+    border-radius: 20px;
+    background: #edf3fb;
+    color: #52769d;
+}
+
+.admin-forbidden-icon svg {
+    width: 30px;
+    height: 30px;
+}
+
+.admin-forbidden-eyebrow {
+    margin: 0 0 10px;
+    color: #8491a2;
+    font-size: 12px;
+}
+
+.admin-forbidden-card h1 {
+    margin: 0;
+    color: #24364b;
+    font-size: 26px;
+    font-weight: 650;
+}
+
+.admin-forbidden-description {
+    margin: 16px 0 24px;
+    color: #778497;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.admin-forbidden-target {
+    margin: 0 0 24px;
+    color: #94a0af;
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+
+.admin-forbidden-target code {
+    margin-left: 6px;
+    color: #6d8096;
+    font-size: 11px;
+}
+
+.admin-forbidden-card .admin-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 40px;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+}
+
+.admin-forbidden-card .admin-button svg {
+    width: 16px;
+    height: 16px;
+}
+
+@media (max-width: 480px) {
+    .admin-forbidden-card {
+        padding: 32px 20px;
+    }
+
+    .admin-forbidden-card h1 {
+        font-size: 23px;
+    }
+
+    .admin-forbidden-description {
+        font-size: 13px;
+    }
+}

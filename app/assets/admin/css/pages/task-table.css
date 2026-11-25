@@ -1,0 +1,74 @@
+/* 定时任务TaskTable所属区块样式，以 scoped 加载。 */
+
+.task-status-control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #7a8b9e;
+    font-size: 12px;
+}
+
+.task-timezone {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.task-timezone svg {
+    width: 14px;
+    height: 14px;
+}
+
+.task-filters :deep(.admin-select) {
+    min-width: 136px;
+}
+
+.task-name {
+    display: block;
+    color: #344960;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+.task-schedule {
+    display: block;
+    color: #52677f;
+    font-size: 12px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+.task-last-time {
+    margin-top: 7px;
+}
+
+.task-empty {
+    color: #9aa6b5;
+    font-size: 12px;
+}
+
+.task-actions {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.task-actions :deep(.admin-button) {
+    padding-inline: 8px;
+}
+
+.task-actions :deep(.admin-button:disabled) {
+    opacity: .45;
+    cursor: not-allowed;
+}
+
+.task-warning {
+    color: #a67525;
+}
+
+@media (max-width: 760px) {
+    .task-timezone {
+        font-size: 11px;
+    }
+}

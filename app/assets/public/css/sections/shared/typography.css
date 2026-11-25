@@ -1,0 +1,16 @@
+/* 区块共用的间距、标题和导语排版。 */
+.section-space { padding-block: var(--section-gap); }
+.section-heading { display: block; align-items: end; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-bottom: 48px; }
+.section-heading-body { display: flex; justify-content: space-between; align-items: end; gap: 36px; margin-top: 32px; }
+.section-title { font-size: var(--text-section); line-height: var(--leading-heading); letter-spacing: var(--tracking-heading); font-weight: var(--font-weight-semibold); margin: 0; max-width: 1000px; text-wrap: balance; white-space: pre-line; overflow-wrap: anywhere; }
+html:not([lang="zh-CN"]) .section-title { text-transform: uppercase; }
+html[lang="zh-CN"] .section-title { letter-spacing: var(--tracking-heading); }
+.section-heading-body .text-link { flex-shrink: 0; }
+.body-copy { font-size: var(--text-body); line-height: var(--leading-body); color: var(--color-brand-muted); max-width: 650px; }
+/* 分区导语的共用排版；组件只负责所在栏目的宽度、间距和对齐。 */
+.section-lead { font-size: var(--text-lead); line-height: var(--leading-body); color: var(--color-brand-muted); text-wrap: balance; overflow-wrap: break-word; }
+@media (max-width: 767px) {
+  .section-heading { margin-bottom: 32px; }
+  .section-heading-body { margin-top: 24px; display: block; }
+  .section-heading-body .text-link { margin-top: 20px; }
+}

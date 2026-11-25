@@ -1,0 +1,87 @@
+{
+  "nav": {
+    "home": "Home",
+    "news": "News",
+    "contact": "Contact"
+  },
+  "common": {
+    "language": "Language",
+    "navigation": "Main navigation",
+    "menu": "Open menu",
+    "close": "Close menu",
+    "skip": "Skip to content",
+    "breadcrumb": "Breadcrumb",
+    "menuLabel": "Menu",
+    "closeLabel": "Close",
+    "loadingHome": "Preparing the homepage"
+  },
+  "news": {
+    "detailPreview": "An article is required to preview this section.",
+    "viewCount": "Views: {count}",
+    "source": "Source",
+    "listSection": {
+      "filterLabel": "News categories",
+      "count": "{count} articles",
+      "pagination": "News pages",
+      "failed": "News could not be loaded."
+    },
+    "contents": "Contents"
+  },
+  "contact": {
+    "formSection": {
+      "invalidEmail": "Enter a valid email address, such as name{'@'}example.com.",
+      "title": "Tell us what you need",
+      "name": "Name",
+      "company": "Company",
+      "email": "Email",
+      "country": "Country / region",
+      "message": "Message",
+      "note": "Tell us what you need and how to reach you.",
+      "category": "Inquiry type",
+      "optional": "Optional",
+      "chooseCategory": "Select an inquiry type",
+      "categoryChanged": "This inquiry type is no longer available. Please select another one.",
+      "submit": "Submit inquiry",
+      "submitting": "Submitting…",
+      "received": "Inquiry received. Reference: {id}.",
+      "failed": "We couldn't submit your inquiry. Try again or use the contact details on this page.",
+      "rateLimited": "Too many submissions. Please try again later."
+    }
+  },
+  "search": {
+    "title": "Search",
+    "intro": "Find products, designations, news and business information.",
+    "label": "Search terms",
+    "placeholder": "Enter a product, designation or keyword",
+    "submit": "Search",
+    "clear": "Clear search",
+    "hint": "Try a product name, standard designation or business keyword.",
+    "filterLabel": "Result types",
+    "resultCount": "Results for “{query}”: {count}",
+    "loading": "Loading search index…",
+    "failed": "Search could not be loaded",
+    "retryHint": "Check your connection and try again.",
+    "retry": "Try again",
+    "emptyHint": "No matching content found. Try another keyword.",
+    "tooLong": "Enter no more than 100 characters.",
+    "invalid": "Enter a term containing letters or numbers.",
+    "pagination": "Search result pages",
+    "previous": "Previous page",
+    "next": "Next page",
+    "goToPage": "Page {page}",
+    "pageCount": "Page {page} of {count}",
+    "noScript": "Search requires JavaScript. You can also browse our products or news.",
+    "types": {
+      "all": "All",
+      "news": "News",
+      "pages": "Pages"
+    },
+    "initialPrompt": "Enter a keyword to find what you need"
+  },
+  "careers": {
+    "status": {
+      "loading": "Loading positions…",
+      "error": "Could not load positions. Please try again later."
+    }
+  }
+}

@@ -1,0 +1,130 @@
+import {afterEach, beforeEach, describe, expect, it, vi} from 'vitest'
+import {createPinia, setActivePinia} from 'pinia'
+import {useAdminRequestStore} from '../../app/stores/admin/request'
+import {useAdminSessionStore} from '../../app/stores/admin/session'
+const state = (id: string) => ({authenticated: true, mustChangePassword: false, csrfToken: `csrf-${id}`,
+    user: {id, username: 'operator', displayName: 'Operator', isRoot: false}})
+const anonymous = (csrfToken = 'anonymous-csrf') => ({authenticated: false, mustChangePassword: false, csrfToken, user: null})
+const credentials = {username: 'operator', password: 'private-password'}
+const csrfError = {data: {success: false, error: {code: 'CSRF_REJECTED'}, requestId: ''}}
+function deferred<T>() {
+    let resolve!: (value: T) => void
+    const promise = new Promise<T>(done => { resolve = done })
+    return {promise, resolve}
+}
+beforeEach(() => {
+    setActivePinia(createPinia())
+    useAdminSessionStore().acceptSession(state('1'), 0)
+})
+afterEach(() => vi.unstubAllGlobals())
+describe('认证请求与身份 store 衔接', () => {
+    it('上传复用写请求的CSRF和身份代次保护', async () => {
+        const pending = deferred<{data: {id: string}}>()
+        const fetch = vi.fn().mockReturnValue(pending.promise)
+        vi.stubGlobal('useRequestFetch', () => vi.fn()); vi.stubGlobal('$fetch', fetch)
+        const auth = useAdminSessionStore(), api = useAdminRequestStore()
+        const file = new File(['fixture'], 'image.png', {type:'image/png'})
+        const uploading = api.upload('media', file, {filename:file.name})
+        expect(fetch.mock.calls[0]?.[1].headers['X-CSRF-Token']).toBe('csrf-1')
+        auth.resetIdentity(); pending.resolve({data:{id:'old'}})
+        await expect(uploading).rejects.toBeDefined()
+    })
+    it('过期身份先引导匿名会话，一次提交即可登录，密码不进入 store', async () => {
+        const request = vi.fn().mockResolvedValueOnce({data: anonymous()}).mockResolvedValueOnce({data: state('2')})
+        const write = vi.fn().mockResolvedValue(undefined)
+        vi.stubGlobal('useRequestFetch', () => request); vi.stubGlobal('$fetch', write)
+        const auth = useAdminSessionStore(), api = useAdminRequestStore()
+        const next = await api.login(credentials)
+        expect(auth.generation).toBe(2)
+        expect(next.user?.id).toBe('2')
+        expect(write).toHaveBeenCalledOnce(); expect(request).toHaveBeenCalledTimes(2)
+        expect(write.mock.calls[0]?.[1].headers['X-CSRF-Token']).toBe('anonymous-csrf')
+        expect(JSON.stringify(auth.$state)).not.toContain('private-password')
+    })
+    it('并发会话读取共用请求', async () => {
+        const pending = deferred<{data: ReturnType<typeof state>}>()
+        const request = vi.fn(() => pending.promise)
+        vi.stubGlobal('useRequestFetch', () => request)
+        const api = useAdminRequestStore()
+        const first = api.refreshSession(), second = api.refreshSession()
+        await vi.waitFor(() => expect(request).toHaveBeenCalledOnce())
+        pending.resolve({data: state('1')})
+        expect(await first).toBe(await second)
+    })
+    it('登出等待旧会话响应，登出期间的新读取等待 Cookie 清除后执行', async () => {
+        const old = deferred<{data: ReturnType<typeof state>}>(), logout = deferred<void>()
+        const request = vi.fn().mockReturnValueOnce(old.promise)
+            .mockResolvedValueOnce({data: state('1')}).mockResolvedValueOnce({data: anonymous()})
+        const write = vi.fn(() => logout.promise)
+        vi.stubGlobal('useRequestFetch', () => request); vi.stubGlobal('$fetch', write)
+        const api = useAdminRequestStore()
+        const first = api.refreshSession(), leaving = api.write('logout')
+        expect(write).not.toHaveBeenCalled()
+        old.resolve({data: state('1')}); await first
+        await vi.waitFor(() => expect(write).toHaveBeenCalledOnce())
+        const reading = api.refreshSession()
+        await Promise.resolve()
+        expect(request).toHaveBeenCalledTimes(2)
+        logout.resolve(); await leaving
+        expect((await reading).authenticated).toBe(false)
+        expect(request).toHaveBeenCalledTimes(3)
+    })
+    it('CSRF 被其他标签页更换后只恢复重试一次', async () => {
+        const request = vi.fn().mockResolvedValueOnce({data: anonymous('old')})
+            .mockResolvedValueOnce({data: anonymous('new')}).mockResolvedValueOnce({data: state('2')})
+        const write = vi.fn().mockRejectedValueOnce(csrfError).mockResolvedValueOnce(undefined)
+        vi.stubGlobal('useRequestFetch', () => request); vi.stubGlobal('$fetch', write)
+        expect((await useAdminRequestStore().login(credentials)).authenticated).toBe(true)
+        expect(write).toHaveBeenCalledTimes(2)
+        expect(write.mock.calls[1]?.[1].headers['X-CSRF-Token']).toBe('new')
+    })
+    it('重复 CSRF 拒绝不无限重试，队列失败后仍可继续', async () => {
+        const request = vi.fn().mockResolvedValue({data: anonymous()})
+        const write = vi.fn().mockRejectedValue(csrfError)
+        vi.stubGlobal('useRequestFetch', () => request); vi.stubGlobal('$fetch', write)
+        const api = useAdminRequestStore()
+        await expect(api.login(credentials)).rejects.toBe(csrfError)
+        expect(write).toHaveBeenCalledTimes(2)
+        expect((await api.refreshSession()).authenticated).toBe(false)
+    })
+    it('凭据错误或网络失败不重放登录请求', async () => {
+        const request = vi.fn().mockResolvedValue({data: anonymous()})
+        const write = vi.fn().mockRejectedValue(new Error('network'))
+        vi.stubGlobal('useRequestFetch', () => request); vi.stubGlobal('$fetch', write)
+        await expect(useAdminRequestStore().login(credentials)).rejects.toThrow('network')
+        expect(write).toHaveBeenCalledOnce()
+    })
+    it('已过期的登出按成功处理，之后可一次登录', async () => {
+        const request = vi.fn().mockResolvedValueOnce({data: anonymous()})
+            .mockResolvedValueOnce({data: anonymous('next')}).mockResolvedValueOnce({data: state('2')})
+        const write = vi.fn().mockResolvedValue(undefined)
+        vi.stubGlobal('useRequestFetch', () => request); vi.stubGlobal('$fetch', write)
+        const api = useAdminRequestStore()
+        await api.write('logout')
+        expect(write).not.toHaveBeenCalled()
+        expect((await api.login(credentials)).user?.id).toBe('2')
+    })
+    it('登录已成功但状态读取失败后，再提交只恢复会话', async () => {
+        const request = vi.fn().mockResolvedValueOnce({data: anonymous()})
+            .mockRejectedValueOnce(new Error('network')).mockResolvedValueOnce({data: state('2')})
+        const write = vi.fn().mockResolvedValue(undefined)
+        vi.stubGlobal('useRequestFetch', () => request); vi.stubGlobal('$fetch', write)
+        const api = useAdminRequestStore()
+        await expect(api.login(credentials)).rejects.toThrow('network')
+        expect((await api.login(credentials)).authenticated).toBe(true)
+        expect(write).toHaveBeenCalledOnce()
+    })
+    it('旧认证写入迟到不能清除已切换的新身份', async () => {
+        const pending = deferred<void>()
+        vi.stubGlobal('useRequestFetch', () => vi.fn().mockResolvedValue({data: state('1')}))
+        const write = vi.fn(() => pending.promise)
+        vi.stubGlobal('$fetch', write)
+        const auth = useAdminSessionStore(), api = useAdminRequestStore()
+        const leaving = api.write('logout')
+        await vi.waitFor(() => expect(write).toHaveBeenCalledOnce())
+        auth.resetIdentity(); auth.acceptSession(state('2'), auth.generation)
+        pending.resolve()
+        await expect(leaving).rejects.toBeDefined()
+        expect(auth.currentUser?.id).toBe('2')
+    })
+})

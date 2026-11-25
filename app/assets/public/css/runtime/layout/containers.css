@@ -1,0 +1,4 @@
+/* 全站容器与通用 Section 排版；组件保留局部布局及响应式差异。 */
+.container-shell { width: min(calc(100% - var(--page-gutter) * 2), var(--content-width)); margin-inline: auto; }
+.technical-label, .eyebrow { font-family: var(--font-sans); font-size: var(--text-label); line-height: var(--leading-compact); letter-spacing: var(--tracking-label); font-weight: var(--font-weight-regular); }
+.eyebrow { text-transform: uppercase; }

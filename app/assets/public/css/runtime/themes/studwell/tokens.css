@@ -1,0 +1,22 @@
+/* 站点设计令牌：官网和独立预览均从根节点读取。 */
+:root {
+  --color-brand-navy:#172641;
+  --color-brand-red:#254fdb;
+  --color-brand-muted:#69758a;
+  --color-brand-ink:#202b40;
+  --color-brand-text:#202b40;
+  --color-brand-paper:#fff;
+  --color-brand-gray:#bec1c0;
+  --color-surface:#f7f9fc;
+  --surface-page:#fff;
+  --surface-section:#f7f9fc;
+  --surface-panel:#eef2ff;
+  --action-hover:#193da9;
+  --rule:#dce1e9;
+  --rule-dark:#aab5c8;
+  --content-width:1180px;
+  --page-gutter:24px;
+  --header-height:84px;
+  --section-gap:3rem;
+}
+@media(max-width:767px){:root{--header-height:76px}}

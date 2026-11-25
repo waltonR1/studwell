@@ -1,0 +1,86 @@
+/* 控件外观复用后台组件；这里只定义维护分区的内容布局。 */
+.site-help { color: var(--admin-view-muted); font-size: 13px; line-height: 1.8; margin-top: 10px; }
+.admin-shell .site-settings fieldset.site-form { border: 0; padding: 0; margin: 0; background: transparent; }
+.admin-shell .site-settings .site-form > .site-card + .admin-view-list-card { margin-top: 32px; }
+.site-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 20px; }
+.site-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 32px; max-width: 1000px; }
+.site-fields > label, .site-field, .site-edit-fields > label { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.site-fields .admin-input, .site-fields label > div, .site-field > div, .site-edit-fields label > div { width: 100%; }
+.admin-shell[data-admin-shell] .site-edit-fields > label > [data-slot="root"],
+.admin-shell[data-admin-shell] .site-edit-fields > label .admin-input {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+.site-wide { grid-column: 1 / -1; }
+.site-check { display: flex; align-items: center; gap: 12px; }
+.site-media-fields { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 32px; margin-bottom: 28px; }
+.site-media-current { display: flex; align-items: center; flex-wrap: wrap; gap: 16px; margin-top: 12px; }
+.site-media-current > img { width: 150px; height: 80px; object-fit: contain; }
+.site-media-thumbnail { width: 96px; height: 60px; object-fit: contain; }
+.site-field-title { display: block; }
+.site-edit-fields { border: 0; margin: 0; padding: 0; min-width: 0; display: grid; gap: 28px; }
+@media (max-width: 720px) { .site-fields, .site-media-fields { grid-template-columns: minmax(0,1fr); } }
+
+.site-settings .site-release-actions { flex-wrap: nowrap; }
+
+/* 页面编辑面板共享布局，限定在页面维护及历史详情内。 */
+.website-page-module, .website-page-dialog {
+.website-editor {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 32px;
+  min-width: 0
+}
+
+.website-card {
+  display: grid;
+  gap: 24px;
+  min-width: 0
+}
+
+.website-editor > .admin-section {
+  margin: 0
+}
+
+.website-card:not(.admin-section) {
+  padding-block: 24px;
+  border-top: 1px solid var(--admin-view-line)
+}
+
+.website-card label:not(.site-check) {
+  display: grid;
+  gap: 12px
+}
+
+
+.website-media-slot + .website-media-slot {
+  margin-top: 24px
+}
+
+.website-card textarea, .website-card input:not([type=checkbox]):not([type=radio]) {
+  width: 100%
+}
+
+.website-card h2, .website-card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0
+}
+}
+
+/* 统一维护内容容器：覆盖 controls.css 的通用 fieldset 卡片样式。 */
+.admin-shell[data-admin-shell] .website-maintenance fieldset.maintenance-content,
+.admin-shell[data-admin-shell] .website-page-module fieldset.website-editor {
+ border: 0; padding: 0; margin: 0; background: transparent; min-width: 0;
+ display: grid; gap: 32px;
+}
+.admin-shell[data-admin-shell] .website-maintenance .maintenance-content > .admin-section {
+ margin: 0;
+}
+
+.admin-shell[data-admin-shell] .website-maintenance fieldset.site-edit-fields {
+ border: 0; padding: 0; margin: 0; background: transparent;
+}

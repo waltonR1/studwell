@@ -1,0 +1,2 @@
+# Drizzle hashes SQL file contents verbatim; keep hashes stable across platforms.
+/drizzle/*.sql text eol=lf

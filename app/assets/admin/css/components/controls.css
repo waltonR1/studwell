@@ -1,0 +1,135 @@
+/* 后台components/controls样式，由 main.css 统一加载，使用后台容器显式限定作用域。 */
+.admin-shell[data-admin-shell] .admin-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 38px;
+    border: 1px solid #aab8c8;
+    border-radius: 6px;
+    padding: 8px 14px;
+    background: white;
+    cursor: pointer;
+    text-decoration: none;
+    color: #174b84;
+    white-space: nowrap;
+}
+
+.admin-shell[data-admin-shell] .admin-button:hover:not(:disabled) {
+    background: #edf3f9;
+    border-color: #7896b7;
+}
+
+.admin-shell[data-admin-shell] .admin-button-primary {
+    color: white;
+    background: #174b84;
+    border-color: #174b84;
+}
+
+.admin-shell[data-admin-shell] .admin-button-primary:hover:not(:disabled) {
+    background: #103d6d;
+    border-color: #103d6d;
+}
+
+.admin-shell[data-admin-shell] .admin-button-danger {
+    color: #9b1c2c;
+    border-color: #d89aa2;
+    background: #fff;
+}
+
+.admin-shell[data-admin-shell] .admin-button-danger:hover:not(:disabled) {
+    color: white;
+    background: #9b1c2c;
+    border-color: #9b1c2c;
+}
+
+.admin-shell[data-admin-shell] .admin-button-quiet {
+    border-color: transparent;
+    background: transparent;
+}
+
+.admin-shell[data-admin-shell] .admin-button:disabled {
+    opacity: .5;
+    cursor: default;
+}
+
+.admin-shell[data-admin-shell] .admin-input, .admin-shell[data-admin-shell] select {
+    min-height: 38px;
+    border: 1px solid #aab8c8;
+    padding: 8px 10px;
+    border-radius: 6px;
+    background: white;
+    color: #182230;
+}
+
+.admin-shell[data-admin-shell] .admin-input:focus, .admin-shell[data-admin-shell] .admin-input:focus-visible {
+    outline: none;
+    border-color: #245a9c;
+    box-shadow: inset 0 0 0 1px #245a9c;
+}
+
+.admin-shell[data-admin-shell] .admin-fields {
+    display: grid;
+    /* Field hints/errors may wrap; keep neighboring controls aligned at the top. */
+    align-items: start;
+    gap: 16px;
+    max-width: 640px;
+    padding: 20px 0;
+}
+
+.admin-shell[data-admin-shell] .admin-fields label {
+    display: grid;
+    align-content: start;
+    gap: 6px;
+}
+
+.admin-shell[data-admin-shell] fieldset, .admin-shell[data-admin-shell] .admin-section {
+    min-width: 0;
+    border: 1px solid #d3dbe4;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    background: white;
+}
+
+.admin-shell[data-admin-shell] legend {
+    padding: 0 6px;
+    font-size: 17px;
+    font-weight: 650;
+    color: #1f344d;
+}
+
+.admin-shell[data-admin-shell] .admin-check-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+    gap: 4px 16px;
+    margin: 12px 0;
+}
+
+.admin-shell[data-admin-shell] .admin-permission {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 8px 0;
+}
+
+@media (max-width: 700px) {
+    .admin-shell[data-admin-shell] .admin-section, .admin-shell[data-admin-shell] fieldset {
+        padding: 16px;
+    }
+}
+
+/* 表单字段错误，不限于弹窗。 */
+.admin-shell[data-admin-shell] .admin-field-error {
+    display: block;
+    min-height: 1.5em;
+    color: #a11725;
+}
+
+/* 列表状态开关统一布局；状态文字由业务提供。 */
+.admin-switch-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    white-space: nowrap;
+}

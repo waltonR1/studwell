@@ -1,0 +1,30 @@
+/* 咨询详情的资料、处理表单及投递时间线共用样式，由各展示组件 scoped 引入。 */
+.inquiry-detail { display: grid; gap: 20px; min-width: 0; overflow-wrap: anywhere; }
+.inquiry-section, .inquiry-summary { display: grid; gap: 10px; min-width: 0; }
+.inquiry-section h3 { font-size: 14px; font-weight: 650; }
+.inquiry-summary-main, .inquiry-meta, .inquiry-actions, .inquiry-history-heading {
+  display: flex; align-items: center; flex-wrap: wrap; gap: 8px 12px;
+}
+.inquiry-summary-main h3 { min-width: 0; font-size: 18px; font-weight: 650; }
+.inquiry-meta, .inquiry-muted, .inquiry-fields dt, .inquiry-history-heading time {
+  color: var(--admin-view-muted, #5e7084); font-size: 12px; font-weight: 400;
+}
+.inquiry-body { white-space: pre-wrap; line-height: 1.7; }
+.inquiry-message, .inquiry-empty {
+  padding: 12px 14px; border: 1px solid var(--admin-view-line, #e5eaf1); border-radius: 8px; background: #f7f9fc;
+}
+.inquiry-empty { color: #5e7084; }
+.inquiry-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 20px; }
+.inquiry-fields > div, .inquiry-control { display: grid; gap: 4px; min-width: 0; }
+.inquiry-email { color: #174d85; text-decoration: underline; text-underline-offset: 2px; }
+.inquiry-divider { padding-top: 16px; border-top: 1px solid var(--admin-view-line, #e5eaf1); }
+.inquiry-controls { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 10px 12px; }
+.inquiry-history { display: grid; gap: 8px; }
+.inquiry-history li {
+  display: grid; gap: 4px; padding: 8px 12px; border-left: 2px solid var(--admin-view-line, #e5eaf1);
+}
+.inquiry-history-heading { justify-content: space-between; }
+@media (max-width: 520px) {
+ .inquiry-fields { grid-template-columns: 1fr; }
+ .inquiry-controls > .inquiry-actions { width: 100%; }
+}

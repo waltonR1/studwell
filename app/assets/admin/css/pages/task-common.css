@@ -1,0 +1,37 @@
+/* 任务组件内部共用的文字与标记规则；由各组件以 scoped 加载，不进入后台全局入口。 */
+
+.task-help {
+    display: block;
+    margin-top: 6px;
+    color: #8b98a9;
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.task-time {
+    display: block;
+    color: #677b91;
+    font-size: 12px;
+    line-height: 1.7;
+    font-variant-numeric: tabular-nums;
+}
+
+.task-trigger {
+    display: inline-flex;
+    padding: 3px 8px;
+    border-radius: 5px;
+    background: #f2f5f9;
+    color: #718297;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.task-snapshot-plan {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin: 0;
+    color: #657c95;
+    font-size: 12px;
+    line-height: 1.7;
+}

@@ -1,0 +1,50 @@
+/* 内页共同外壳与阅读规范。页面前缀保留，避免影响局部选择器及动画。 */
+/* 图文 Hero 后的首个正文区收紧顶部留白，其余章节间距保持原值。 */
+.about-hero + .about-section,
+.investment-hero + .investment-section,
+.export-hero + .export-section,
+.sustainability-hero + .sustainability-section {
+  padding-top: clamp(32px, 3vw, 48px);
+}
+
+.careers-hero, .careers-positions { --careers-header: var(--header-height); }
+.contact-hero, .contact-details { --contact-header: var(--header-height); }
+.about-shell,
+.export-shell,
+.investment-shell,
+.sustainability-shell,
+.products-shell,
+.news-shell,
+:where(.search-page) .search-shell,
+.careers-shell,
+.contact-shell { width: min(calc(100% - var(--page-gutter) * 2), var(--content-width)); margin-inline: auto; }
+:where(.about-section),
+:where(.export-section),
+:where(.investment-section),
+:where(.sustainability-section) { --inner-space-section: clamp(80px, 6vw, 96px); --inner-space-compact: clamp(64px, 5vw, 80px); --inner-space-heading: clamp(40px, 3.5vw, 48px); --inner-space-group: clamp(24px, 2.5vw, 32px); --inner-space-media: clamp(40px, 4vw, 56px); }
+:where(.about-section) { --about-space-section: var(--inner-space-section); --about-space-compact: var(--inner-space-compact); --about-space-heading: var(--inner-space-heading); --about-space-group: var(--inner-space-group); --about-space-media: var(--inner-space-media); }
+.about-section { padding-block: var(--about-section-space, var(--about-space-section)); scroll-margin-top: calc(var(--header-height) + 20px); }
+:where(.export-section) { --export-space-section: var(--inner-space-section); --export-space-compact: var(--inner-space-compact); --export-space-heading: var(--inner-space-heading); }
+.export-section { padding-block: var(--export-section-space, var(--export-space-section)); scroll-margin-top: calc(var(--header-height) + 20px); }
+:where(.investment-section) { --investment-space-section: var(--inner-space-section); --investment-space-compact: var(--inner-space-compact); --investment-space-heading: var(--inner-space-heading); --investment-space-group: var(--inner-space-group); }
+.investment-section { padding-block: var(--investment-section-space, var(--investment-space-section)); scroll-margin-top: calc(var(--header-height) + 20px); }
+:where(.sustainability-section) { --sustainability-space-section: var(--inner-space-section); --sustainability-space-compact: var(--inner-space-compact); --sustainability-space-heading: var(--inner-space-heading); }
+.sustainability-section { padding-block: var(--sustainability-section-space, var(--sustainability-space-section)); scroll-margin-top: calc(var(--header-height) + 20px); }
+.about-heading { font-size: var(--text-section); font-weight: var(--font-weight-semibold); line-height: var(--leading-heading); letter-spacing: var(--tracking-heading); white-space: pre-line; overflow-wrap: anywhere; }
+@media (max-width: 767px) {
+:where(.about-section),
+:where(.export-section),
+:where(.investment-section),
+:where(.sustainability-section) { --inner-space-section: 56px; --inner-space-compact: 48px; --inner-space-heading: 32px; --inner-space-group: 24px; --inner-space-media: 32px; }
+.about-heading { font-size: var(--text-section); }
+}
+
+/* 独立页面由页面组导航承接定位，正文紧随导航，不再预留 section 标签条空间。 */
+.page-group-nav + .about-section,
+.page-group-nav + .investment-section,
+.page-group-nav + .sustainability-section { padding-top: 32px; }
+@media (max-width: 767px) {
+  .page-group-nav + .about-section,
+  .page-group-nav + .investment-section,
+  .page-group-nav + .sustainability-section { padding-top: 24px; }
+}

@@ -1,0 +1,29 @@
+/* 后台菜单树的公共切换与类型标记。 */
+
+.admin-shell .admin-view-page .admin-tree-kind {
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: #f1f5f9;
+    font-size: 11px;
+}
+
+.admin-shell .admin-view-page .admin-tree-kind {
+    margin-inline-start: 8px;
+    color: #8290a1;
+}
+
+.admin-shell .admin-view-page .admin-tree-toggle {
+    border: 0;
+    background: #edf3fa;
+    color: #315f8c;
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    margin-inline-end: 8px;
+    cursor: pointer;
+}
+
+.admin-shell .admin-view-page .admin-tree-toggle:focus-visible {
+    outline: 2px solid #3269a5;
+    outline-offset: 2px;
+}

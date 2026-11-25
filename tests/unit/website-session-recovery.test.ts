@@ -1,0 +1,46 @@
+import {emptyPageSettings} from '../../shared/utils/website/page-layouts'
+import { beforeEach, expect, it, vi } from 'vitest';
+import { createPinia, setActivePinia } from 'pinia';
+import { useAdminSessionStore } from '../../app/stores/admin/session';
+import type { WebsitePageRecord } from '../../shared/types/admin/website';
+const state = vi.hoisted(() => ({ read: vi.fn() }));
+vi.mock('~/stores/admin/request', () => ({ useAdminRequestStore: () => ({ read: state.read, message: () => '', operationMessage: () => '' }) }));
+vi.mock('~/stores/admin/navigation', () => ({ useAdminNavigationStore: () => ({ invalidate: vi.fn() }) }));
+import { useAdminWebsitePagesStore } from '../../app/stores/admin/website-pages';
+const identity = (id: string) => ({ authenticated: true, mustChangePassword: false, user: { id, username: id, displayName: id, isRoot: true }, csrfToken: 'fixture' });
+const page = () => ({ resourceId: '2026103118000000001', persisted: true, scopeGranted: true, key: 'export', settings: emptyPageSettings(), sections: [], version: 1, publication: { stateVersion: 1, status: 'unpublished', changed: false, draftVersion: 1, publishedReleaseId: null, publishedDraftVersion: null, releases: [] } } as unknown as WebsitePageRecord);
+beforeEach(() => { setActivePinia(createPinia()); state.read.mockReset(); state.read.mockImplementation(async () => page()); });
+it('真实会话过期→匿名刷新→登录→恢复原编辑器，不依赖 recovery 设置时序', async () => {
+    const auth = useAdminSessionStore();
+    auth.acceptSession(identity('owner'), auth.generation);
+    auth.acceptPermissions({ isRoot: true, permissions: [], version: '1' }, auth.generation);
+    const store = useAdminWebsitePagesStore();
+    await store.enter('export');
+    store.draft!.settings.displayName.zh = 'Unsaved';
+    const old = auth.generation;
+    auth.acceptSession({ authenticated: false, mustChangePassword: false, user: null, csrfToken: 'anonymous' }, old);
+    auth.markExpired('/admin/website/website_export');
+    expect(store.record).toBeNull();
+    store.leave('export', 'settings');
+    auth.resetIdentity('login');
+    auth.acceptSession(identity('owner'), auth.generation);
+    auth.acceptPermissions({ isRoot: true, permissions: [], version: '2' }, auth.generation);
+    await store.enter('export');
+    expect(store.draft!.settings.displayName.zh).toBe('Unsaved');
+    expect(store.record!.settings.displayName.zh).not.toBe('Unsaved');
+    expect(state.read).toHaveBeenCalledTimes(2);
+});
+it('真实身份切换清理暂存，切回原账户也不能恢复', async () => {
+    const auth = useAdminSessionStore();
+    auth.acceptSession(identity('owner'), auth.generation);
+    const store = useAdminWebsitePagesStore();
+    await store.enter('export');
+    store.draft!.settings.displayName.zh = 'Unsaved';
+    auth.markExpired('/admin');
+    auth.resetIdentity('login');
+    auth.acceptSession(identity('another'), auth.generation);
+    auth.acceptSession(identity('owner'), auth.generation);
+    auth.acceptPermissions({ isRoot: true, permissions: [], version: '1' }, auth.generation);
+    await store.enter('export');
+    expect(store.draft!.settings.displayName.zh).not.toBe('Unsaved');
+});

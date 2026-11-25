@@ -1,0 +1,55 @@
+{
+  "enabled": {
+    "news": true,
+    "careers": true,
+    "inquiries": true
+  },
+  "pages": {},
+  "templates": {
+    "news.list": {
+      "modules": [
+        "news"
+      ],
+      "provides": [
+        "news.list"
+      ],
+      "requires": []
+    },
+    "news.article": {
+      "modules": [
+        "news"
+      ],
+      "provides": [
+        "news.article"
+      ],
+      "requires": []
+    },
+    "home.news": {
+      "modules": [
+        "news"
+      ],
+      "provides": [],
+      "requires": [
+        "news.list"
+      ]
+    },
+    "careers.positionsSection": {
+      "modules": [
+        "careers"
+      ],
+      "provides": [
+        "careers.positions"
+      ],
+      "requires": []
+    },
+    "contact.detailsSection": {
+      "modules": [
+        "inquiries"
+      ],
+      "provides": [
+        "inquiries.form"
+      ],
+      "requires": []
+    }
+  }
+}

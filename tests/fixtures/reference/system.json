@@ -1,0 +1,216 @@
+{
+  "dictionaries": [
+    {
+      "code": "account_department",
+      "name": "所属部门",
+      "description": "账号资料中的部门选项，不参与权限判断。",
+      "items": [
+        [
+          "management",
+          "综合管理部"
+        ],
+        [
+          "information",
+          "信息技术部"
+        ],
+        [
+          "audit",
+          "审计合规部"
+        ],
+        [
+          "operations",
+          "运营保障部"
+        ],
+        [
+          "international",
+          "国际业务部"
+        ],
+        [
+          "marketing",
+          "品牌市场部"
+        ]
+      ]
+    },
+    {
+      "code": "account_position",
+      "name": "职务／岗位",
+      "description": "账号资料中的岗位选项，不参与权限判断。",
+      "items": [
+        [
+          "administrator",
+          "系统管理员"
+        ],
+        [
+          "configurator",
+          "系统配置专员"
+        ],
+        [
+          "auditor",
+          "审计专员"
+        ],
+        [
+          "operator",
+          "运维工程师"
+        ],
+        [
+          "supervisor",
+          "审计主管"
+        ],
+        [
+          "specialist",
+          "业务专员"
+        ]
+      ]
+    }
+  ],
+  "inquirySettings": {
+    "categories": [
+      {
+        "code": "export",
+        "labels": {
+          "zh": "产品与出口",
+          "en": "Products and exports",
+          "fr": "Produits et exportation",
+          "es": "Productos y exportación",
+          "pt": "Produtos e exportação"
+        },
+        "enabled": true,
+        "forwardTo": "",
+        "defaultAssigneeId": ""
+      },
+      {
+        "code": "investment",
+        "labels": {
+          "zh": "海外投资",
+          "en": "Overseas investment",
+          "fr": "Investissement à l’étranger",
+          "es": "Inversión en el extranjero",
+          "pt": "Investimento no exterior"
+        },
+        "enabled": true,
+        "forwardTo": "",
+        "defaultAssigneeId": ""
+      },
+      {
+        "code": "other",
+        "labels": {
+          "zh": "其他",
+          "en": "Other",
+          "fr": "Autre",
+          "es": "Otra",
+          "pt": "Outra"
+        },
+        "enabled": true,
+        "forwardTo": "",
+        "defaultAssigneeId": ""
+      }
+    ],
+    "mail": {
+      "forwardEnabled": false,
+      "replyEnabled": false,
+      "assignmentEnabled": false,
+      "from": "",
+      "defaultRecipient": "",
+      "replyMailbox": "",
+      "forwardRoute": "category",
+      "forwardContent": "details",
+      "forwardTemplates": {
+        "notice": {
+          "subject": "官网咨询 [{{id}}] · {{category}}",
+          "body": "收到一条新的官网咨询。\n咨询编号：{{id}}\n咨询类型：{{category}}\n\n在后台查看：{{link}}"
+        },
+        "details": {
+          "subject": "官网咨询 [{{id}}] · {{category}}",
+          "body": "咨询编号：{{id}}\n姓名：{{name}}\n邮箱：{{email}}\n公司：{{company}}\n国家或地区：{{country}}\n语言：{{locale}}\n\n{{message}}\n\n在后台查看：{{link}}"
+        }
+      },
+      "replyRoute": "default"
+    }
+  },
+  "imageRules": {
+    "logo": {
+      "mobileEditable": true,
+      "maxZoom": 3,
+      "opacity": {
+        "value": 1,
+        "min": 0.2,
+        "max": 1,
+        "editable": true
+      },
+      "brightness": {
+        "value": 1,
+        "min": 0.5,
+        "max": 1.5,
+        "editable": true
+      },
+      "label": "完整图片",
+      "fit": "contain",
+      "desktopRatio": 1.3333333333333333,
+      "mobileRatio": 1.3333333333333333,
+      "overlay": false
+    },
+    "favicon": {
+      "label": "浏览器图标",
+      "fit": "contain",
+      "desktopRatio": 1,
+      "mobileRatio": 1,
+      "mobileEditable": false,
+      "maxZoom": 1,
+      "opacity": {
+        "value": 1,
+        "min": 1,
+        "max": 1,
+        "editable": false
+      },
+      "brightness": {
+        "value": 1,
+        "min": 1,
+        "max": 1,
+        "editable": false
+      },
+      "overlay": false
+    },
+    "newsCover": {
+      "mobileEditable": true,
+      "maxZoom": 3,
+      "opacity": {
+        "value": 1,
+        "min": 0.2,
+        "max": 1,
+        "editable": true
+      },
+      "brightness": {
+        "value": 1,
+        "min": 0.5,
+        "max": 1.5,
+        "editable": true
+      },
+      "label": "图片",
+      "fit": "cover",
+      "desktopRatio": 1.7777777777777777,
+      "mobileRatio": 1.7777777777777777,
+      "overlay": false
+    },
+    "newsBody": {
+      "mobileEditable": true,
+      "maxZoom": 3,
+      "opacity": {
+        "value": 1,
+        "min": 0.2,
+        "max": 1,
+        "editable": true
+      },
+      "brightness": {
+        "value": 1,
+        "min": 0.5,
+        "max": 1.5,
+        "editable": true
+      },
+      "label": "完整图片",
+      "fit": "contain",
+      "desktopRatio": 1.3333333333333333,
+      "mobileRatio": 1.3333333333333333,
+      "overlay": false
+    }
+  }
+}

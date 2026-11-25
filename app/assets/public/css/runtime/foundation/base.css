@@ -1,0 +1,19 @@
+/* 元素基础、键盘导航与减少动态效果策略。 */
+/* 滚动条预留由后台标记单独控制，避免官网固定分屏右侧出现空白。 */
+:root { color-scheme: light; }
+/* 极窄视口扣除滚动条后允许正文收缩，避免320px下限造成横向溢出。 */
+body { margin: 0; min-width: min(320px, 100%); background: var(--color-brand-paper); color: var(--color-brand-text); font-family: var(--font-sans); font-size: var(--text-body); }
+/* 补齐未声明行高的内容标题；组件的展示字和页脚标签仍按各自语义覆盖。 */
+:where(#main-content) :where(h1, h2, h3, h4) { font-weight: var(--font-weight-semibold); line-height: var(--leading-heading); letter-spacing: var(--tracking-heading); }
+button, a, input, textarea, select, summary { -webkit-tap-highlight-color: transparent; }
+button, summary { cursor: pointer; }
+button:disabled { cursor: default; opacity: .5; }
+button, input, textarea, select { font: inherit; }
+a { text-decoration: none; }
+:focus-visible { outline: 3px solid #d3515b; outline-offset: 5px; }
+#main-content:focus { outline: none; }
+p { line-height: var(--leading-body); }
+
+.skip-link { position: fixed; top: 0; left: 16px; z-index: 100; transform: translateY(-120%); background: white; color: var(--color-brand-text); padding: 12px 16px; font-size: var(--text-small); line-height: var(--leading-compact); }
+.skip-link:focus-visible { top: 12px; transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; } }

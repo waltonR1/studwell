@@ -1,0 +1,2 @@
+/* Header 与 Footer 共用的品牌链接外形。 */
+.brand { display: inline-flex; align-items: center; gap: 10px; font-size: var(--text-card); font-weight: var(--font-weight-bold); letter-spacing: var(--tracking-heading); flex: none; line-height: var(--leading-display); }

@@ -1,0 +1,251 @@
+/* 定时任务TaskConfigDialog所属区块样式，以 scoped 加载。 */
+
+.task-overview {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #edf1f6;
+}
+
+.task-overview .task-info-facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.task-overview .task-info-facts > div {
+    grid-template-columns: 60px minmax(0, 1fr);
+    gap: 8px;
+}
+
+.task-dialog-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-right: auto;
+}
+
+.task-dialog-controls .task-force-button {
+    color: #ad354b;
+    border-color: #efcbd1;
+    background: #fff3f4;
+}
+
+@media (max-width: 520px) {
+    .task-overview .task-info-facts {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 520px) {
+    .task-dialog-controls {
+        flex-basis: 100%;
+    }
+}
+
+.task-warning {
+    color: #a67525;
+}
+
+.task-editor {
+    display: grid;
+    gap: 22px;
+}
+
+.task-form-section h3, .task-preview h3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 0 15px;
+    color: #3d536c;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.task-form-section h3 > span {
+    color: #94a0af;
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.task-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 16px;
+}
+
+.task-retention-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.task-field {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    gap: 8px;
+    color: #6b7c90;
+    font-size: 12px;
+}
+
+.task-field-full {
+    grid-column: 1 / -1;
+}
+
+.task-field > .admin-input, .task-input-unit input {
+    width: 100%;
+    min-width: 0;
+    min-height: 40px;
+    box-sizing: border-box;
+    padding: 9px 12px;
+    border: 1px solid #dbe2eb;
+    background: #fff;
+    color: #455a72;
+}
+
+.task-field :deep(.admin-select) {
+    width: 100%;
+}
+
+.task-field-help {
+    margin: 9px 0 0;
+    color: #8e9aaa;
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+.task-input-unit {
+    position: relative;
+}
+
+.task-input-unit input {
+    padding-right: 44px;
+}
+
+.task-input-unit > span {
+    position: absolute;
+    right: 13px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a0b0;
+    pointer-events: none;
+}
+
+.task-monospace {
+    font-family: ui-monospace, monospace;
+    letter-spacing: 1px;
+}
+
+.task-preview {
+    padding: 16px;
+    border: 1px solid #e4ebf4;
+    border-radius: 9px;
+    background: #f7f9fc;
+}
+
+.task-preview-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.task-preview-heading h3 {
+    justify-content: flex-start;
+    gap: 7px;
+    margin: 0;
+}
+
+.task-preview-heading svg, .task-snapshot-plan svg {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+    color: #7b95b2;
+}
+
+.task-preview-heading :deep(.admin-button) {
+    min-height: 30px;
+    padding: 5px 9px;
+    font-size: 12px;
+}
+
+.task-preview > p {
+    margin: 10px 0 0;
+    color: #94a0af;
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.task-preview ol {
+    display: grid;
+    gap: 9px;
+    margin: 16px 0 0;
+    padding: 14px 0 0;
+    border-top: 1px solid #e4ebf4;
+    list-style: none;
+}
+
+.task-preview li {
+    display: flex;
+    gap: 18px;
+    color: #667e98;
+    font-size: 12px;
+    font-variant-numeric: tabular-nums;
+}
+
+.task-preview li > span {
+    color: #a4b1c1;
+    font-size: 11px;
+}
+
+.task-info-facts {
+    display: grid;
+    gap: 14px;
+    margin: 20px 0 0;
+}
+
+.task-info-facts > div {
+    display: grid;
+    grid-template-columns: 76px minmax(0, 1fr);
+    gap: 14px;
+}
+
+.task-info-facts dt {
+    color: #94a0af;
+    font-size: 12px;
+}
+
+.task-info-facts dd {
+    margin: 0;
+    color: #536c86;
+    font-size: 12px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 760px) {
+    .task-retention-grid {
+        gap: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .task-form-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .task-retention-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .task-form-section h3 > span {
+        flex-basis: 100%;
+    }
+}

@@ -1,0 +1,86 @@
+{
+  "enabled": {
+    "news": true,
+    "careers": true,
+    "inquiries": true
+  },
+  "pages": {
+    "news": [
+      "news"
+    ],
+    "news_detail": [
+      "news"
+    ],
+    "careers": [
+      "careers"
+    ]
+  },
+  "templates": {
+    "news.list": {
+      "modules": [
+        "news"
+      ],
+      "provides": [
+        "news.list"
+      ],
+      "requires": []
+    },
+    "news.article": {
+      "modules": [
+        "news"
+      ],
+      "provides": [
+        "news.article"
+      ],
+      "requires": []
+    },
+    "hero.news": {
+      "modules": [
+        "news"
+      ],
+      "provides": [],
+      "requires": []
+    },
+    "home.news": {
+      "modules": [
+        "news"
+      ],
+      "provides": [],
+      "requires": [
+        "news.list"
+      ]
+    },
+    "hero.careers": {
+      "modules": [
+        "careers"
+      ],
+      "provides": [],
+      "requires": []
+    },
+    "careers.positionsSection": {
+      "modules": [
+        "careers"
+      ],
+      "provides": [
+        "careers.positions"
+      ],
+      "requires": []
+    },
+    "contact.detailsSection": {
+      "modules": [
+        "inquiries"
+      ],
+      "provides": [
+        "inquiries.form"
+      ],
+      "requires": []
+    },
+    "content.page-entry": {
+      "modules": [],
+      "provides": [
+        "page.redirect"
+      ],
+      "requires": []
+    }
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "nav": {
+    "home": "首页",
+    "news": "新闻中心",
+    "contact": "联系我们"
+  },
+  "common": {
+    "language": "语言切换",
+    "navigation": "主导航",
+    "menu": "展开菜单",
+    "close": "关闭菜单",
+    "skip": "跳到正文",
+    "breadcrumb": "面包屑导航",
+    "menuLabel": "菜单",
+    "closeLabel": "关闭",
+    "loadingHome": "正在准备首页"
+  },
+  "news": {
+    "detailPreview": "需要文章数据才能预览此区块。",
+    "viewCount": "浏览 {count} 次",
+    "source": "来源",
+    "listSection": {
+      "filterLabel": "新闻分类",
+      "count": "共 {count} 篇",
+      "pagination": "新闻分页",
+      "failed": "新闻加载失败。"
+    },
+    "contents": "文章目录"
+  },
+  "contact": {
+    "formSection": {
+      "invalidEmail": "请输入有效的邮箱地址，例如 name{'@'}example.com。",
+      "title": "填写咨询内容",
+      "name": "姓名",
+      "company": "公司名称",
+      "email": "邮箱",
+      "country": "国家 / 地区",
+      "message": "留言内容",
+      "note": "填写需求和可联系的邮箱，我们会跟进。",
+      "category": "咨询类型",
+      "optional": "选填",
+      "chooseCategory": "请选择咨询类型",
+      "categoryChanged": "该咨询类型已不可用，请重新选择。",
+      "submit": "提交咨询",
+      "submitting": "正在提交…",
+      "received": "已收到咨询，编号：{id}。",
+      "failed": "暂时无法提交，请重试或使用本页联系方式。",
+      "rateLimited": "提交过于频繁，请稍后重试。"
+    }
+  },
+  "search": {
+    "title": "搜索",
+    "intro": "查找产品、型号、新闻与业务信息。",
+    "label": "搜索关键词",
+    "placeholder": "输入产品、型号或关键词",
+    "submit": "搜索",
+    "clear": "清空搜索",
+    "hint": "可输入产品名称、标准型号或业务关键词。",
+    "filterLabel": "结果类型",
+    "resultCount": "“{query}”的搜索结果：{count} 项",
+    "loading": "正在加载搜索索引…",
+    "failed": "搜索暂时无法加载",
+    "retryHint": "请检查网络连接后重试。",
+    "retry": "重新加载",
+    "emptyHint": "未找到相关内容，请尝试其他关键词",
+    "tooLong": "请输入不超过 100 个字符的关键词。",
+    "invalid": "请输入包含文字或数字的关键词。",
+    "pagination": "搜索结果分页",
+    "previous": "上一页",
+    "next": "下一页",
+    "goToPage": "第 {page} 页",
+    "pageCount": "第 {page} / {count} 页",
+    "noScript": "搜索需要启用 JavaScript。您也可以直接浏览产品中心或新闻中心。",
+    "types": {
+      "all": "全部",
+      "news": "新闻",
+      "pages": "页面"
+    },
+    "initialPrompt": "输入关键词，开始查找所需内容"
+  },
+  "careers": {
+    "status": {
+      "loading": "正在加载岗位…",
+      "error": "岗位加载失败，请稍后重试。"
+    }
+  }
+}

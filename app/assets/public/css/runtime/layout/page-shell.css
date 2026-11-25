@@ -1,0 +1,6 @@
+/* 公开页面外壳，提供页头避让、底色和新闻页头尺寸。 */
+.content-page,
+.products-page,
+.news-page,
+.search-page { padding-top: var(--header-height); background: var(--surface-page); --rule: #bec1c080; }
+.news-page { --news-header: var(--header-height); }

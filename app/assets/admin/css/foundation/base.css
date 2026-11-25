@@ -1,0 +1,27 @@
+/* 后台foundation/base样式，由 main.css 统一加载，使用后台容器显式限定作用域。 */
+.admin-shell[data-admin-shell] {
+    min-height: 100vh;
+    background: #f6f7f9;
+    color: #182230;
+    font-family: system-ui, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.admin-shell[data-admin-shell] p {
+    line-height: 1.5;
+}
+
+.admin-shell[data-admin-shell] :focus-visible {
+    outline: 2px solid #245a9c;
+    outline-offset: 2px;
+}
+
+.admin-shell[data-admin-shell] h1 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.admin-shell[data-admin-shell] {
+    isolation: isolate;
+}

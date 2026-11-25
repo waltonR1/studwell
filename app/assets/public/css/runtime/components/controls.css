@@ -1,0 +1,11 @@
+/* 公共控件；按钮取原有覆盖合成后的最终值。 */
+.button { display: inline-flex; align-items: center; justify-content: center; gap: 30px; padding: 18px 24px; min-height: 52px; font-family: var(--font-sans); font-size: var(--text-small); font-weight: var(--font-weight-semibold); border-radius: 0; }
+.button-red { background: var(--color-brand-red); color: white; transition: background .2s; }
+.button-red:hover { background: #941a23; }
+.button-outline { border: 1px solid var(--color-brand-muted); color: var(--color-brand-text); background: transparent; }
+.button-outline:hover { border-color: var(--color-brand-red); color: var(--color-brand-red); }
+.text-link { display: inline-flex; align-items: center; gap: 32px; font-size: var(--text-small); font-weight: var(--font-weight-medium); padding-block: 10px; border-bottom: 1px solid currentColor; transition: color .2s; }
+.text-link:hover { color: var(--color-brand-red); }
+.text-link > span { transition: transform .2s; }
+.text-link:hover > span { transform: translate(3px, -3px); }
+@media (prefers-reduced-motion: reduce) { .text-link:hover > span { transform: none; } }

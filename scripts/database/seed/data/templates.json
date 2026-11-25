@@ -1,0 +1,1498 @@
+[
+  {
+    "key": "content.sidebar-nav",
+    "name": "页内目录",
+    "allowedPages": "all",
+    "dataSource": null,
+    "fields": {
+      "kind": "group",
+      "label": "目录内容",
+      "fields": {
+        "copy": {
+          "kind": "group",
+          "label": "显示文字",
+          "fields": {
+            "title": {
+              "kind": "text",
+              "label": "目录标题",
+              "max": 200,
+              "required": true
+            }
+          }
+        }
+      }
+    },
+    "mediaSlots": [],
+    "category": "通用",
+    "preview": {
+      "pageKey": "sidebar"
+    },
+    "editor": {
+      "key": "content.sidebar-nav",
+      "groups": [
+        {
+          "title": "目录文字",
+          "fields": [
+            {
+              "label": "目录标题",
+              "kind": "text",
+              "path": "copy.title"
+            }
+          ]
+        }
+      ]
+    },
+    "publicRendererId": "content.sidebar-nav",
+    "previewRendererId": "content.sidebar-nav"
+  },
+  {
+    "key": "guide.document",
+    "name": "指南文档",
+    "allowedPages": "all",
+    "dataSource": null,
+    "fields": {
+      "kind": "group",
+      "label": "文档内容",
+      "fields": {
+        "title": {
+          "kind": "text",
+          "label": "标题",
+          "max": 200,
+          "required": true
+        },
+        "body": {
+          "kind": "text",
+          "label": "正文",
+          "max": 20000,
+          "required": true
+        },
+        "code": {
+          "kind": "text",
+          "label": "代码示例",
+          "searchable": false,
+          "max": 10000
+        }
+      }
+    },
+    "mediaSlots": [],
+    "preview": {
+      "pageKey": "guide"
+    },
+    "editor": null,
+    "publicRendererId": "guide.document",
+    "previewRendererId": "guide.document"
+  },
+  {
+    "key": "guide.introduction",
+    "name": "指南导语",
+    "allowedPages": "all",
+    "dataSource": null,
+    "fields": {
+      "kind": "group",
+      "label": "导语",
+      "fields": {
+        "eyebrow": {
+          "kind": "text",
+          "label": "栏目标识",
+          "max": 200,
+          "required": true
+        },
+        "heading": {
+          "kind": "text",
+          "label": "页面标题",
+          "max": 200,
+          "required": true
+        },
+        "summary": {
+          "kind": "text",
+          "label": "摘要",
+          "max": 1000,
+          "required": true
+        },
+        "facts": {
+          "kind": "list",
+          "label": "概览数字",
+          "max": 3,
+          "item": {
+            "kind": "group",
+            "label": "项目",
+            "fields": {
+              "value": {
+                "kind": "text",
+                "label": "数值",
+                "max": 40,
+                "required": true
+              },
+              "label": {
+                "kind": "text",
+                "label": "说明",
+                "max": 100,
+                "required": true
+              }
+            }
+          }
+        }
+      }
+    },
+    "mediaSlots": [],
+    "preview": {
+      "pageKey": "guide"
+    },
+    "editor": null,
+    "publicRendererId": "guide.introduction",
+    "previewRendererId": "guide.introduction"
+  },
+  {
+    "key": "content.text",
+    "name": "通用正文",
+    "allowedPages": "all",
+    "dataSource": null,
+    "fields": {
+      "kind": "group",
+      "label": "正文",
+      "fields": {
+        "copy": {
+          "kind": "group",
+          "label": "文案",
+          "fields": {
+            "title": {
+              "kind": "text",
+              "label": "标题",
+              "max": 200,
+              "required": true
+            },
+            "body": {
+              "kind": "text",
+              "label": "正文",
+              "max": 10000,
+              "required": true
+            }
+          }
+        }
+      }
+    },
+    "mediaSlots": [],
+    "category": "通用",
+    "preview": {
+      "pageKey": "guide"
+    },
+    "editor": null,
+    "publicRendererId": "content.text",
+    "previewRendererId": "content.text"
+  },
+  {
+    "key": "news.list",
+    "name": "新闻列表",
+    "allowedPages": "all",
+    "dataSource": "news",
+    "fields": {
+      "kind": "group",
+      "label": "内容",
+      "fields": {
+        "copy": {
+          "kind": "group",
+          "label": "列表文字",
+          "fields": {
+            "all": {
+              "kind": "text",
+              "label": "全部分类文字",
+              "max": 100,
+              "required": true
+            },
+            "empty": {
+              "kind": "text",
+              "label": "空状态文字",
+              "max": 500,
+              "required": true
+            }
+          }
+        },
+        "data": {
+          "kind": "group",
+          "label": "展示设置",
+          "fields": {
+            "pageSize": {
+              "kind": "number",
+              "label": "每页条数",
+              "max": 100,
+              "required": true
+            },
+            "showFilters": {
+              "kind": "boolean",
+              "label": "显示分类筛选",
+              "required": true
+            },
+            "showDate": {
+              "kind": "boolean",
+              "label": "显示日期",
+              "required": true
+            },
+            "showSummary": {
+              "kind": "boolean",
+              "label": "显示摘要",
+              "required": true
+            }
+          }
+        }
+      }
+    },
+    "mediaSlots": [],
+    "category": "新闻",
+    "preview": {
+      "pageKey": "guide"
+    },
+    "editor": {
+      "key": "news.list",
+      "groups": [
+        {
+          "title": "列表文案",
+          "help": "分类名称和具体文章在“新闻中心”维护；这里配置筛选项和空状态文案。",
+          "fields": [
+            {
+              "label": "“全部”筛选项文字",
+              "kind": "text",
+              "path": "copy.all"
+            },
+            {
+              "label": "无新闻提示",
+              "kind": "text",
+              "path": "copy.empty"
+            }
+          ]
+        },
+        {
+          "title": "展示设置",
+          "help": "设置分页数量(1-100)，以及分类筛选、发布日期和文章摘要的显示方式。",
+          "fields": [
+            {
+              "label": "每页新闻数量",
+              "kind": "number",
+              "path": "data.pageSize",
+              "min": 1,
+              "max": 100,
+              "integer": true
+            },
+            {
+              "label": "显示分类筛选",
+              "kind": "boolean",
+              "path": "data.showFilters"
+            },
+            {
+              "label": "显示发布日期",
+              "kind": "boolean",
+              "path": "data.showDate"
+            },
+            {
+              "label": "显示文章摘要",
+              "kind": "boolean",
+              "path": "data.showSummary"
+            }
+          ]
+        }
+      ]
+    },
+    "publicRendererId": "news.list",
+    "previewRendererId": "news.list"
+  },
+  {
+    "key": "news.article",
+    "name": "新闻文章",
+    "allowedPages": "all",
+    "dataSource": "news",
+    "fields": {
+      "kind": "group",
+      "label": "内容",
+      "fields": {}
+    },
+    "mediaSlots": [],
+    "category": "新闻",
+    "preview": {
+      "pageKey": "guide"
+    },
+    "editor": null,
+    "publicRendererId": "news.article",
+    "previewRendererId": "news.article"
+  },
+  {
+    "key": "home.news",
+    "name": "首页新闻推荐",
+    "allowedPages": "all",
+    "dataSource": "news",
+    "fields": {
+      "kind": "group",
+      "label": "内容",
+      "fields": {
+        "copy": {
+          "kind": "group",
+          "label": "文字内容",
+          "fields": {
+            "title": {
+              "kind": "text",
+              "label": "标题",
+              "max": 10000,
+              "required": true
+            },
+            "all": {
+              "kind": "text",
+              "label": "全部",
+              "max": 10000,
+              "required": true
+            }
+          }
+        },
+        "data": {
+          "kind": "group",
+          "label": "结构化内容",
+          "fields": {
+            "listingLink": {
+              "kind": "link",
+              "label": "新闻列表入口",
+              "required": false,
+              "optional": true
+            }
+          }
+        }
+      }
+    },
+    "mediaSlots": [],
+    "category": "首页",
+    "preview": {
+      "pageKey": "guide"
+    },
+    "editor": {
+      "key": "home.news",
+      "groups": [
+        {
+          "title": "新闻列表入口",
+          "fields": [
+            {
+              "label": "新闻列表入口",
+              "kind": "link",
+              "path": "data.listingLink",
+              "shared": true,
+              "optional": true
+            }
+          ]
+        },
+        {
+          "title": "区块标题",
+          "fields": [
+            {
+              "label": "展示标题",
+              "kind": "text",
+              "path": "copy.title"
+            },
+            {
+              "label": "查看全部按钮文字",
+              "kind": "text",
+              "path": "copy.all"
+            }
+          ]
+        }
+      ]
+    },
+    "publicRendererId": "home.news",
+    "previewRendererId": "home.news"
+  },
+  {
+    "key": "careers.positionsSection",
+    "name": "招聘岗位列表",
+    "allowedPages": "all",
+    "dataSource": null,
+    "fields": {
+      "kind": "group",
+      "label": "内容",
+      "fields": {
+        "copy": {
+          "kind": "group",
+          "label": "文字内容",
+          "fields": {
+            "title": {
+              "kind": "text",
+              "label": "标题",
+              "max": 10000,
+              "required": true
+            },
+            "count": {
+              "kind": "text",
+              "label": "数量",
+              "max": 10000,
+              "required": true
+            },
+            "emptyTitle": {
+              "kind": "text",
+              "label": "空状态标题",
+              "max": 10000,
+              "required": true
+            },
+            "emptyIntro": {
+              "kind": "text",
+              "label": "空状态说明",
+              "max": 10000,
+              "required": true
+            },
+            "responsibilities": {
+              "kind": "text",
+              "label": "岗位职责",
+              "max": 10000,
+              "required": true
+            },
+            "requirements": {
+              "kind": "text",
+              "label": "任职要求",
+              "max": 10000,
+              "required": true
+            },
+            "inquire": {
+              "kind": "text",
+              "label": "问询按钮",
+              "max": 10000,
+              "required": true
+            }
+          }
+        },
+        "data": {
+          "kind": "group",
+          "label": "结构化内容",
+          "fields": {
+            "inquiryLink": {
+              "kind": "link",
+              "label": "咨询入口",
+              "required": false,
+              "optional": true
+            }
+          }
+        }
+      }
+    },
+    "mediaSlots": [],
+    "category": "招聘",
+    "preview": {
+      "pageKey": "guide"
+    },
+    "editor": {
+      "key": "careers.positionsSection",
+      "groups": [
+        {
+          "title": "咨询入口",
+          "fields": [
+            {
+              "label": "咨询入口",
+              "kind": "link",
+              "path": "data.inquiryLink",
+              "shared": true,
+              "optional": true
+            }
+          ]
+        },
+        {
+          "title": "岗位区文字",
+          "fields": [
+            {
+              "label": "展示标题",
+              "kind": "text",
+              "path": "copy.title"
+            },
+            {
+              "label": "岗位数量说明",
+              "kind": "pattern",
+              "path": "copy.count",
+              "token": "count",
+              "sample": "3"
+            }
+          ]
+        },
+        {
+          "title": "岗位咨询按钮",
+          "fields": [
+            {
+              "label": "咨询按钮文字",
+              "kind": "text",
+              "path": "copy.inquire"
+            }
+          ]
+        },
+        {
+          "title": "空列表提示",
+          "fields": [
+            {
+              "label": "无岗位时的标题",
+              "kind": "text",
+              "path": "copy.emptyTitle"
+            },
+            {
+              "label": "无岗位时的说明",
+              "kind": "textarea",
+              "path": "copy.emptyIntro",
+              "rows": 2
+            }
+          ]
+        },
+        {
+          "title": "岗位详情界面文字",
+          "fields": [
+            {
+              "label": "职责分组标题",
+              "kind": "text",
+              "path": "copy.responsibilities"
+            },
+            {
+              "label": "任职要求分组标题",
+              "kind": "text",
+              "path": "copy.requirements"
+            }
+          ]
+        }
+      ]
+    },
+    "publicRendererId": "careers.positionsSection",
+    "previewRendererId": "careers.positionsSection"
+  },
+  {
+    "key": "contact.detailsSection",
+    "name": "联系信息与询盘",
+    "allowedPages": "all",
+    "dataSource": null,
+    "fields": {
+      "kind": "group",
+      "label": "内容",
+      "fields": {
+        "copy": {
+          "kind": "group",
+          "label": "文字内容",
+          "fields": {
+            "title": {
+              "kind": "text",
+              "label": "标题",
+              "max": 10000,
+              "required": true
+            },
+            "intro": {
+              "kind": "text",
+              "label": "介绍",
+              "max": 10000,
+              "required": true
+            },
+            "exportEmail": {
+              "kind": "text",
+              "label": "出口业务邮箱",
+              "max": 10000,
+              "required": true
+            },
+            "investmentEmail": {
+              "kind": "text",
+              "label": "投资邮箱",
+              "max": 10000,
+              "required": true
+            },
+            "phone": {
+              "kind": "text",
+              "label": "电话",
+              "max": 10000,
+              "required": true
+            },
+            "address": {
+              "kind": "text",
+              "label": "地址",
+              "max": 10000,
+              "required": true
+            },
+            "fax": {
+              "kind": "text",
+              "label": "传真",
+              "max": 10000,
+              "required": true
+            },
+            "languages": {
+              "kind": "group",
+              "label": "语言",
+              "fields": {
+                "zh": {
+                  "kind": "text",
+                  "label": "中文",
+                  "max": 10000,
+                  "required": true
+                },
+                "en": {
+                  "kind": "text",
+                  "label": "英语",
+                  "max": 10000,
+                  "required": true
+                },
+                "fr": {
+                  "kind": "text",
+                  "label": "法语",
+                  "max": 10000,
+                  "required": true
+                },
+                "es": {
+                  "kind": "text",
+                  "label": "西语",
+                  "max": 10000,
+                  "required": true
+                }
+              }
+            }
+          }
+        },
+        "data": {
+          "kind": "group",
+          "label": "结构化内容",
+          "fields": {
+            "details": {
+              "kind": "group",
+              "label": "详情",
+              "fields": {
+                "address": {
+                  "kind": "text",
+                  "label": "地址",
+                  "max": 10000,
+                  "required": true
+                },
+                "companyName": {
+                  "kind": "text",
+                  "label": "公司名称",
+                  "max": 10000,
+                  "required": true
+                }
+              }
+            },
+            "channels": {
+              "kind": "group",
+              "label": "联系渠道",
+              "fields": {
+                "contactChannels": {
+                  "kind": "group",
+                  "label": "联系渠道",
+                  "fields": {
+                    "exportEmail": {
+                      "kind": "text",
+                      "label": "出口业务邮箱",
+                      "max": 10000,
+                      "required": true
+                    },
+                    "investmentEmail": {
+                      "kind": "text",
+                      "label": "投资邮箱",
+                      "max": 10000,
+                      "required": true
+                    },
+                    "fax": {
+                      "kind": "text",
+                      "label": "传真",
+                      "max": 10000,
+                      "required": true
+                    },
+                    "hotlines": {
+                      "kind": "list",
+                      "label": "热线",
+                      "max": 100,
+                      "item": {
+                        "kind": "group",
+                        "label": "内容",
+                        "fields": {
+                          "language": {
+                            "kind": "text",
+                            "label": "语言",
+                            "max": 10000,
+                            "required": true
+                          },
+                          "number": {
+                            "kind": "text",
+                            "label": "号码",
+                            "max": 10000,
+                            "required": true
+                          },
+                          "href": {
+                            "kind": "text",
+                            "label": "链接",
+                            "max": 10000,
+                            "required": true
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "mediaSlots": [],
+    "category": "联系与咨询",
+    "preview": {
+      "pageKey": "guide"
+    },
+    "editor": {
+      "key": "contact.detailsSection",
+      "groups": [
+        {
+          "title": "区块介绍",
+          "fields": [
+            {
+              "label": "展示标题",
+              "kind": "text",
+              "path": "copy.title"
+            },
+            {
+              "label": "公司名称",
+              "kind": "text",
+              "path": "data.details.companyName"
+            },
+            {
+              "label": "介绍正文",
+              "kind": "textarea",
+              "path": "copy.intro",
+              "rows": 2
+            }
+          ]
+        },
+        {
+          "title": "业务邮箱",
+          "fields": [
+            {
+              "label": "出口邮箱标签",
+              "kind": "text",
+              "path": "copy.exportEmail"
+            },
+            {
+              "label": "出口业务邮箱（各语言共用）",
+              "kind": "text",
+              "path": "data.channels.contactChannels.exportEmail",
+              "shared": true
+            },
+            {
+              "label": "投资邮箱标签",
+              "kind": "text",
+              "path": "copy.investmentEmail"
+            },
+            {
+              "label": "投资业务邮箱（各语言共用）",
+              "kind": "text",
+              "path": "data.channels.contactChannels.investmentEmail",
+              "shared": true
+            }
+          ]
+        },
+        {
+          "title": "热线电话",
+          "fields": [
+            {
+              "label": "电话标签",
+              "kind": "text",
+              "path": "copy.phone"
+            },
+            {
+              "label": "服务语言与电话",
+              "kind": "collection",
+              "path": "data.channels.contactChannels.hotlines",
+              "presentation": "table",
+              "columns": [
+                {
+                  "label": "前台语言名称",
+                  "field": "languageLabel"
+                },
+                {
+                  "label": "电话号码",
+                  "field": "number"
+                }
+              ],
+              "identity": "language",
+              "itemLabel": "热线",
+              "fixedRows": [
+                {
+                  "key": "zh",
+                  "label": "中文热线",
+                  "fields": [
+                    {
+                      "label": "前台语言名称",
+                      "absolute": true,
+                      "kind": "text",
+                      "path": "copy.languages.zh",
+                      "key": "languageLabel"
+                    },
+                    {
+                      "label": "电话号码（各语言共用）",
+                      "kind": "text",
+                      "path": "number",
+                      "shared": true,
+                      "deriveTelephone": true
+                    }
+                  ]
+                },
+                {
+                  "key": "en",
+                  "label": "英语热线",
+                  "fields": [
+                    {
+                      "label": "前台语言名称",
+                      "absolute": true,
+                      "kind": "text",
+                      "path": "copy.languages.en",
+                      "key": "languageLabel"
+                    },
+                    {
+                      "label": "电话号码（各语言共用）",
+                      "kind": "text",
+                      "path": "number",
+                      "shared": true,
+                      "deriveTelephone": true
+                    }
+                  ]
+                },
+                {
+                  "key": "fr",
+                  "label": "法语热线",
+                  "fields": [
+                    {
+                      "label": "前台语言名称",
+                      "absolute": true,
+                      "kind": "text",
+                      "path": "copy.languages.fr",
+                      "key": "languageLabel"
+                    },
+                    {
+                      "label": "电话号码（各语言共用）",
+                      "kind": "text",
+                      "path": "number",
+                      "shared": true,
+                      "deriveTelephone": true
+                    }
+                  ]
+                },
+                {
+                  "key": "es",
+                  "label": "西班牙语热线",
+                  "fields": [
+                    {
+                      "label": "前台语言名称",
+                      "absolute": true,
+                      "kind": "text",
+                      "path": "copy.languages.es",
+                      "key": "languageLabel"
+                    },
+                    {
+                      "label": "电话号码（各语言共用）",
+                      "kind": "text",
+                      "path": "number",
+                      "shared": true,
+                      "deriveTelephone": true
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "传真",
+          "fields": [
+            {
+              "label": "传真标签",
+              "kind": "text",
+              "path": "copy.fax"
+            },
+            {
+              "label": "传真号码（各语言共用）",
+              "kind": "text",
+              "path": "data.channels.contactChannels.fax",
+              "shared": true
+            }
+          ]
+        },
+        {
+          "title": "办公地址",
+          "fields": [
+            {
+              "label": "地址标签",
+              "kind": "text",
+              "path": "copy.address"
+            },
+            {
+              "label": "公司地址",
+              "kind": "textarea",
+              "path": "data.details.address",
+              "rows": 2
+            }
+          ]
+        }
+      ]
+    },
+    "publicRendererId": "contact.detailsSection",
+    "previewRendererId": "contact.detailsSection"
+  },
+  {
+    "key": "guide.collection",
+    "name": "能力卡片与集合",
+    "allowedPages": "all",
+    "dataSource": null,
+    "fields": {
+      "kind": "group",
+      "label": "内容",
+      "fields": {
+        "copy": {
+          "kind": "group",
+          "label": "文字",
+          "fields": {
+            "title": {
+              "kind": "text",
+              "label": "标题",
+              "max": 200,
+              "required": true
+            },
+            "intro": {
+              "kind": "text",
+              "label": "说明",
+              "max": 2000,
+              "required": true
+            },
+            "link": {
+              "kind": "text",
+              "label": "链接文字",
+              "max": 100,
+              "required": true
+            },
+            "featured": {
+              "kind": "text",
+              "label": "推荐文字",
+              "max": 100,
+              "required": true
+            }
+          }
+        },
+        "data": {
+          "kind": "group",
+          "label": "集合",
+          "fields": {
+            "items": {
+              "kind": "list",
+              "label": "卡片条目",
+              "max": 16,
+              "item": {
+                "kind": "group",
+                "label": "条目",
+                "fields": {
+                  "title": {
+                    "kind": "text",
+                    "label": "名称",
+                    "max": 200,
+                    "required": true
+                  },
+                  "body": {
+                    "kind": "text",
+                    "label": "说明",
+                    "max": 2000,
+                    "required": true
+                  },
+                  "order": {
+                    "kind": "number",
+                    "label": "序号",
+                    "min": 1,
+                    "max": 100
+                  },
+                  "featured": {
+                    "kind": "boolean",
+                    "label": "推荐"
+                  },
+                  "link": {
+                    "kind": "link",
+                    "label": "目标页面"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "mediaSlots": [],
+    "preview": {
+      "pageKey": "guide"
+    },
+    "editor": {
+      "key": "guide.collection",
+      "groups": [
+        {
+          "title": "文字",
+          "fields": [
+            {
+              "label": "标题",
+              "kind": "text",
+              "path": "copy.title"
+            },
+            {
+              "label": "说明",
+              "kind": "textarea",
+              "path": "copy.intro",
+              "rows": 4
+            },
+            {
+              "label": "链接文字",
+              "kind": "text",
+              "path": "copy.link"
+            },
+            {
+              "label": "推荐文字",
+              "kind": "text",
+              "path": "copy.featured"
+            }
+          ]
+        },
+        {
+          "title": "卡片",
+          "fields": [
+            {
+              "label": "卡片条目",
+              "kind": "collection",
+              "path": "data.items",
+              "presentation": "table",
+              "columns": [
+                {
+                  "label": "名称",
+                  "field": "title"
+                },
+                {
+                  "label": "序号",
+                  "field": "order"
+                },
+                {
+                  "label": "推荐",
+                  "field": "featured"
+                }
+              ],
+              "itemLabel": "卡片",
+              "titlePath": "title",
+              "fields": [
+                {
+                  "label": "名称",
+                  "kind": "text",
+                  "path": "title"
+                },
+                {
+                  "label": "说明",
+                  "kind": "textarea",
+                  "path": "body",
+                  "rows": 4
+                },
+                {
+                  "label": "序号",
+                  "kind": "number",
+                  "path": "order",
+                  "min": 1,
+                  "max": 100,
+                  "integer": true
+                },
+                {
+                  "label": "推荐",
+                  "kind": "boolean",
+                  "path": "featured"
+                },
+                {
+                  "label": "目标页面",
+                  "kind": "link",
+                  "path": "link"
+                }
+              ],
+              "defaults": {
+                "title": "",
+                "body": "",
+                "order": 1,
+                "featured": false,
+                "link": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "publicRendererId": "guide.collection",
+    "previewRendererId": "guide.collection"
+  },
+  {
+    "key": "guide.media",
+    "name": "图片与视频",
+    "allowedPages": "all",
+    "dataSource": null,
+    "fields": {
+      "kind": "group",
+      "label": "内容",
+      "fields": {
+        "copy": {
+          "kind": "group",
+          "label": "文字",
+          "fields": {
+            "title": {
+              "kind": "text",
+              "label": "标题",
+              "max": 200,
+              "required": true
+            },
+            "intro": {
+              "kind": "text",
+              "label": "说明",
+              "max": 2000,
+              "required": true
+            },
+            "image": {
+              "kind": "text",
+              "label": "图片说明",
+              "max": 300,
+              "required": true
+            },
+            "video": {
+              "kind": "text",
+              "label": "视频说明",
+              "max": 300,
+              "required": true
+            }
+          }
+        },
+        "data": {
+          "kind": "group",
+          "label": "媒体",
+          "fields": {
+            "image": {
+              "kind": "media",
+              "label": "可取景图片",
+              "mediaKind": "image",
+              "imagePreset": {
+                "label": "图片",
+                "fit": "cover",
+                "desktopRatio": 1.7777777777777777,
+                "mobileRatio": 1.7777777777777777,
+                "mobileEditable": true,
+                "maxZoom": 3,
+                "opacity": {
+                  "value": 1,
+                  "min": 0.2,
+                  "max": 1,
+                  "editable": true
+                },
+                "brightness": {
+                  "value": 1,
+                  "min": 0.5,
+                  "max": 1.5,
+                  "editable": true
+                },
+                "overlay": false
+              }
+            },
+            "poster": {
+              "kind": "media",
+              "label": "视频封面",
+              "mediaKind": "image",
+              "imagePreset": {
+                "label": "图片",
+                "fit": "cover",
+                "desktopRatio": 1.7777777777777777,
+                "mobileRatio": 1.7777777777777777,
+                "mobileEditable": true,
+                "maxZoom": 3,
+                "opacity": {
+                  "value": 1,
+                  "min": 0.2,
+                  "max": 1,
+                  "editable": true
+                },
+                "brightness": {
+                  "value": 1,
+                  "min": 0.5,
+                  "max": 1.5,
+                  "editable": true
+                },
+                "overlay": false
+              }
+            },
+            "video": {
+              "kind": "media",
+              "label": "演示视频",
+              "mediaKind": "video"
+            }
+          }
+        }
+      }
+    },
+    "mediaSlots": [],
+    "preview": {
+      "pageKey": "guide"
+    },
+    "editor": {
+      "key": "guide.media",
+      "groups": [
+        {
+          "title": "说明",
+          "fields": [
+            {
+              "label": "标题",
+              "kind": "text",
+              "path": "copy.title"
+            },
+            {
+              "label": "说明",
+              "kind": "textarea",
+              "path": "copy.intro",
+              "rows": 4
+            }
+          ]
+        },
+        {
+          "title": "媒体",
+          "fields": [
+            {
+              "label": "图片",
+              "kind": "media",
+              "path": "data.image",
+              "mediaKind": "image"
+            },
+            {
+              "label": "封面",
+              "kind": "media",
+              "path": "data.poster",
+              "mediaKind": "image"
+            },
+            {
+              "label": "视频",
+              "kind": "media",
+              "path": "data.video",
+              "mediaKind": "video"
+            },
+            {
+              "label": "图片说明",
+              "kind": "text",
+              "path": "copy.image"
+            },
+            {
+              "label": "视频说明",
+              "kind": "text",
+              "path": "copy.video"
+            }
+          ]
+        }
+      ]
+    },
+    "publicRendererId": "guide.media",
+    "previewRendererId": "guide.media"
+  },
+  {
+    "key": "guide.structure",
+    "name": "树形结构与字段",
+    "allowedPages": "all",
+    "dataSource": null,
+    "fields": {
+      "kind": "group",
+      "label": "内容",
+      "fields": {
+        "copy": {
+          "kind": "group",
+          "label": "文字",
+          "fields": {
+            "title": {
+              "kind": "text",
+              "label": "标题",
+              "max": 200,
+              "required": true
+            },
+            "intro": {
+              "kind": "text",
+              "label": "说明",
+              "max": 2000,
+              "required": true
+            },
+            "enabled": {
+              "kind": "text",
+              "label": "启用状态文字",
+              "max": 100,
+              "required": true
+            },
+            "disabled": {
+              "kind": "text",
+              "label": "停用状态文字",
+              "max": 100,
+              "required": true
+            }
+          }
+        },
+        "data": {
+          "kind": "group",
+          "label": "结构",
+          "fields": {
+            "tree": {
+              "kind": "tree",
+              "label": "内容结构",
+              "max": 40,
+              "maxDepth": 4,
+              "fields": {
+                "id": {
+                  "kind": "text",
+                  "label": "稳定标识",
+                  "searchable": false,
+                  "max": 80,
+                  "required": true
+                },
+                "title": {
+                  "kind": "text",
+                  "label": "节点名称",
+                  "max": 200,
+                  "required": true
+                },
+                "count": {
+                  "kind": "number",
+                  "label": "数量",
+                  "min": 0,
+                  "max": 100
+                },
+                "enabled": {
+                  "kind": "boolean",
+                  "label": "启用"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "mediaSlots": [],
+    "preview": {
+      "pageKey": "guide"
+    },
+    "editor": {
+      "key": "guide.structure",
+      "groups": [
+        {
+          "title": "文字",
+          "fields": [
+            {
+              "label": "标题",
+              "kind": "text",
+              "path": "copy.title"
+            },
+            {
+              "label": "说明",
+              "kind": "textarea",
+              "path": "copy.intro",
+              "rows": 4
+            },
+            {
+              "label": "启用文字",
+              "kind": "text",
+              "path": "copy.enabled"
+            },
+            {
+              "label": "停用文字",
+              "kind": "text",
+              "path": "copy.disabled"
+            }
+          ]
+        },
+        {
+          "title": "树形结构",
+          "fields": [
+            {
+              "label": "节点",
+              "kind": "collection",
+              "path": "data.tree",
+              "tree": {
+                "roots": "single",
+                "childrenField": "children",
+                "allowReparent": true,
+                "maxDepth": 4,
+                "levels": [
+                  {
+                    "itemLabel": "节点",
+                    "titlePath": "title",
+                    "fields": [
+                      {
+                        "label": "稳定标识",
+                        "kind": "text",
+                        "path": "id"
+                      },
+                      {
+                        "label": "节点名称",
+                        "kind": "text",
+                        "path": "title"
+                      },
+                      {
+                        "label": "数量",
+                        "kind": "number",
+                        "path": "count",
+                        "min": 0,
+                        "max": 100,
+                        "integer": true
+                      },
+                      {
+                        "label": "启用",
+                        "kind": "boolean",
+                        "path": "enabled"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "identity": "id",
+              "itemLabel": "节点",
+              "titlePath": "title",
+              "defaults": {
+                "id": "",
+                "title": "",
+                "count": 0,
+                "enabled": true,
+                "children": []
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "publicRendererId": "guide.structure",
+    "previewRendererId": "guide.structure"
+  },
+  {
+    "key": "content.page-nav",
+    "name": "同组页面导航",
+    "allowedPages": "all",
+    "dataSource": null,
+    "fields": {
+      "kind": "group",
+      "label": "内容",
+      "fields": {
+        "data": {
+          "kind": "group",
+          "label": "导航",
+          "fields": {
+            "links": {
+              "kind": "list",
+              "label": "页面入口",
+              "max": 40,
+              "item": {
+                "kind": "group",
+                "label": "页面",
+                "fields": {
+                  "resourceId": {
+                    "kind": "link",
+                    "label": "跳转目标",
+                    "required": true
+                  },
+                  "label": {
+                    "kind": "text",
+                    "label": "显示名称",
+                    "max": 500,
+                    "required": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "mediaSlots": [],
+    "preview": {
+      "pageKey": "guide"
+    },
+    "editor": null,
+    "publicRendererId": "content.page-nav",
+    "previewRendererId": "content.page-nav"
+  }
+]

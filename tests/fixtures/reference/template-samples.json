@@ -1,0 +1,195 @@
+{
+  "content.sidebar-nav": {
+    "view": {
+      "structure": {
+        "key": "about",
+        "seo": {
+          "title": "页内目录",
+          "description": "当前页面章节锚点示例"
+        },
+        "path": "/about",
+        "sections": [
+          {
+            "id": "2026112419000000001",
+            "anchorKey": "sidebar-navigation",
+            "sortOrder": 0,
+            "templateKey": "content.sidebar-nav",
+            "capabilities": []
+          },
+          {
+            "id": "sample-profile",
+            "templateKey": "content.text",
+            "sortOrder": 1,
+            "anchorKey": "profile",
+            "capabilities": []
+          },
+          {
+            "id": "sample-history",
+            "templateKey": "content.text",
+            "sortOrder": 2,
+            "anchorKey": "history",
+            "capabilities": []
+          },
+          {
+            "id": "sample-structure",
+            "templateKey": "content.text",
+            "sortOrder": 3,
+            "anchorKey": "structure",
+            "capabilities": []
+          },
+          {
+            "id": "sample-values",
+            "templateKey": "content.text",
+            "sortOrder": 4,
+            "anchorKey": "values",
+            "capabilities": []
+          }
+        ],
+        "releaseId": "2026111317000000012",
+        "resourceId": "2026111218000000005",
+        "displayName": "页内目录",
+        "sceneEnabled": false,
+        "linkLocations": {},
+        "sceneTransitionSeconds": null
+      },
+      "page": {
+        "key": "about",
+        "locale": "zh",
+        "releaseId": "2026111317000000012",
+        "media": {},
+        "sections": [
+          {
+            "id": "2026112419000000001",
+            "renderer": "app/components/public/sections/common/SidebarNavigation.vue",
+            "shared": {
+              "media": []
+            },
+            "content": {
+              "copy": {
+                "title": "本页内容"
+              }
+            }
+          },
+          {
+            "id": "sample-profile",
+            "renderer": "app/components/public/sections/common/TextContent.vue",
+            "shared": {
+              "media": []
+            },
+            "content": {
+              "copy": {
+                "title": "企业简介",
+                "body": ""
+              }
+            }
+          },
+          {
+            "id": "sample-history",
+            "renderer": "app/components/public/sections/common/TextContent.vue",
+            "shared": {
+              "media": []
+            },
+            "content": {
+              "copy": {
+                "title": "历史沿革",
+                "body": ""
+              }
+            }
+          },
+          {
+            "id": "sample-structure",
+            "renderer": "app/components/public/sections/common/TextContent.vue",
+            "shared": {
+              "media": []
+            },
+            "content": {
+              "copy": {
+                "title": "公司架构",
+                "body": ""
+              }
+            }
+          },
+          {
+            "id": "sample-values",
+            "renderer": "app/components/public/sections/common/TextContent.vue",
+            "shared": {
+              "media": []
+            },
+            "content": {
+              "copy": {
+                "title": "公司价值与愿景",
+                "body": ""
+              }
+            }
+          }
+        ]
+      }
+    },
+    "settings": {
+      "modulePolicyVersion": 1,
+      "languages": {
+        "enabledLocales": [
+          "zh"
+        ],
+        "defaultLocale": "zh"
+      },
+      "locale": "zh",
+      "pages": {
+        "about": {
+          "key": "about",
+          "seo": {
+            "title": "页内目录",
+            "description": "当前页面章节锚点示例"
+          },
+          "path": "/about",
+          "sections": [
+            {
+              "id": "2026112419000000001",
+              "anchorKey": "sidebar-navigation",
+              "sortOrder": 0,
+              "templateKey": "content.sidebar-nav",
+              "capabilities": []
+            },
+            {
+              "id": "sample-profile",
+              "templateKey": "content.text",
+              "sortOrder": 1,
+              "anchorKey": "profile",
+              "capabilities": []
+            },
+            {
+              "id": "sample-history",
+              "templateKey": "content.text",
+              "sortOrder": 2,
+              "anchorKey": "history",
+              "capabilities": []
+            },
+            {
+              "id": "sample-structure",
+              "templateKey": "content.text",
+              "sortOrder": 3,
+              "anchorKey": "structure",
+              "capabilities": []
+            },
+            {
+              "id": "sample-values",
+              "templateKey": "content.text",
+              "sortOrder": 4,
+              "anchorKey": "values",
+              "capabilities": []
+            }
+          ],
+          "releaseId": "2026111317000000012",
+          "resourceId": "2026111218000000005",
+          "displayName": "页内目录",
+          "sceneEnabled": false,
+          "linkLocations": {},
+          "sceneTransitionSeconds": null
+        }
+      },
+      "basic": null,
+      "header": null,
+      "footer": null
+    }
+  }
+}

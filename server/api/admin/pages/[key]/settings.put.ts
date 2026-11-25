@@ -1,0 +1,6 @@
+// 管理端 PUT /api/admin/pages/[key]/settings 路由入口，衔接请求处理与业务服务。
+import {defineEventHandler} from 'h3'
+import {getDatabase} from '#server/db'
+import {authRuntime} from '../../../../runtime/auth'
+import {websitePageHandlers} from '../../../../http/handlers/website-page-handlers'
+export default defineEventHandler(event=>websitePageHandlers(getDatabase(),authRuntime().options).settings(event))

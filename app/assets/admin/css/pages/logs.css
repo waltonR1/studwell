@@ -1,0 +1,481 @@
+/* 日志页沿用账号管理的视觉规格，仅作用于日志模块。
+ * 公共规则以后台容器限定；模块保留既有选择器权重，局部规则通过零权重容器限制作用范围。 */
+.admin-shell .admin-module.log-page.log-list {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    box-sizing: border-box;
+    margin-inline: 0;
+    padding: 28px clamp(16px, 2vw, 32px) 48px;
+}
+
+.admin-shell .admin-module.log-page .admin-page-header {
+    margin-bottom: 26px;
+}
+
+.admin-shell .admin-module.log-page .admin-page-heading h1 {
+    margin-bottom: 6px;
+    color: #1e3046;
+    font-size: 26px;
+    font-weight: 650;
+    letter-spacing: -.5px;
+}
+
+.admin-shell .admin-module.log-page .admin-page-heading p {
+    color: #7a8797;
+    font-size: 13px;
+}
+
+.admin-shell .admin-module.log-page .admin-button {
+    gap: 7px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 550;
+    white-space: nowrap;
+}
+
+:where(.admin-shell .log-page) .log-icon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+.admin-shell .admin-module.log-page .log-list-card {
+    min-width: 0;
+    border: 1px solid #e5eaf1;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 3px 12px #26364b03;
+}
+
+:where(.admin-shell .log-page) .log-list-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 22px 22px 0;
+}
+
+:where(.admin-shell .log-page) .log-list-heading h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    color: #344960;
+    font-size: 15px;
+    font-weight: 650;
+}
+
+:where(.admin-shell .log-page) .log-list-heading p {
+    margin: 0;
+    color: #96a1af;
+    font-size: 12px;
+}
+
+:where(.admin-shell .log-page) .log-result-count {
+    padding: 2px 8px;
+    border-radius: 5px;
+    background: #f0f4f9;
+    color: #7c8ca1;
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.admin-shell .admin-module.log-page .log-filters {
+    gap: 10px;
+    margin: 0;
+    padding: 20px 22px 14px;
+    border: 0;
+    background: transparent;
+    align-items: center;
+}
+
+.admin-shell .admin-module.log-page .admin-input {
+    min-height: 40px;
+    border-color: #dbe2eb;
+    border-radius: 8px;
+    font-size: 13px;
+}
+
+:where(.admin-shell .log-page) .log-action-filter {
+    width: 200px;
+}
+
+:where(.admin-shell .log-page) .log-date {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: #778497;
+}
+
+:where(.admin-shell .log-page) .log-applied {
+    padding: 0 22px 14px;
+    color: #7a8797;
+    font-size: 12px;
+}
+
+.admin-shell .admin-module.log-page .log-search-help {
+    margin: 0;
+    padding: 0 22px 12px;
+    color: #8491a2;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+:where(.admin-shell .log-page) .log-applied p {
+    margin: 0;
+}
+
+:where(.admin-shell .log-page) .log-filter-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+}
+
+:where(.admin-shell .log-page) .log-filter-tags span {
+    padding: 3px 8px;
+    border: 1px solid #e5eaf1;
+    border-radius: 5px;
+    background: #f8fafc;
+    overflow-wrap: anywhere;
+}
+
+.admin-shell .admin-module.log-page .log-export-bar {
+    gap: 12px;
+    margin: 0;
+    padding: 0 22px 18px;
+    font-size: 12px;
+    color: #8491a2;
+}
+
+:where(.admin-shell .log-page) .log-export-bar label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+:where(.admin-shell .log-page) .log-export-bar input {
+    accent-color: #235a93;
+}
+
+.admin-shell .admin-module.log-page .admin-table-wrap {
+    border-top: 1px solid #e5eaf1;
+}
+
+.admin-shell .admin-module.log-page table {
+    border: 0;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.admin-shell .admin-module.log-page th {
+    padding: 12px 16px;
+    border-bottom: 1px solid #e5eaf1;
+    background: #f8fafc;
+    color: #8a97a6;
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.admin-shell .admin-module.log-page td {
+    padding: 18px 16px;
+    border-bottom: 1px solid #edf1f6;
+    color: #526b86;
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+.admin-shell .admin-module.log-page .admin-table-time {
+    white-space: nowrap;
+    font-size: 12px;
+    font-variant-numeric: tabular-nums;
+}
+
+:where(.admin-shell .log-page) .log-meta {
+    display: block;
+    margin-top: 4px;
+    color: #8b98a9;
+    font-size: 11px;
+}
+
+:where(.admin-shell .log-page) .log-result {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 8px;
+    border-radius: 5px;
+    background: #f0f4f9;
+    color: #65788e;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+:where(.admin-shell .log-page) .log-result::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+:where(.admin-shell .log-page) .log-result-success {
+    background: #eaf6ef;
+    color: #28744f;
+}
+
+:where(.admin-shell .log-page) .log-result-failed {
+    background: #fff0f1;
+    color: #b34153;
+}
+
+:where(.admin-shell .log-page) .log-result-denied {
+    background: #fff5e6;
+    color: #936923;
+}
+
+.admin-shell .admin-module.log-page .log-pagination {
+    border: 0;
+    border-top: 1px solid #e5eaf1;
+    border-radius: 0 0 12px 12px;
+    justify-content: flex-end;
+    gap: 10px;
+    margin: 0;
+    padding: 16px 22px;
+    color: #8491a2;
+    font-size: 12px;
+}
+
+:where(.admin-shell .log-page) .log-pagination > span {
+    margin-right: auto;
+}
+
+:where(.admin-shell .log-page) .log-context {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    user-select: text;
+}
+
+:where(.admin-shell .log-page) .log-copy-success {
+    color: #28744f;
+    font-size: 13px;
+}
+
+@media (max-width: 640px) {
+    :where(.admin-shell .log-page) .log-list-heading {
+        padding-inline: 16px;
+    }
+
+    .admin-shell .admin-module.log-page .log-filters, .admin-shell .admin-module.log-page .log-export-bar, :where(.admin-shell .log-page) .log-applied {
+        padding-inline: 16px;
+    }
+
+    :where(.admin-shell .log-page) .log-date {
+        width: 100%;
+    }
+
+    :where(.admin-shell .log-page) .log-date input {
+        flex: 1;
+        min-width: 0;
+    }
+
+    :where(.admin-shell .log-page) .log-action-filter {
+        max-width: 100%;
+    }
+
+    .admin-shell .admin-module.log-page .log-pagination {
+        flex-wrap: wrap;
+        padding-inline: 16px;
+    }
+}
+
+:where(.admin-shell .log-page) .log-facts {
+    margin: 0;
+}
+
+:where(.admin-shell .log-page) .log-facts > div {
+    display: grid;
+    grid-template-columns: 170px minmax(0, 1fr);
+    gap: 16px;
+    padding: 9px 0;
+}
+
+:where(.admin-shell .log-page) .log-facts dt {
+    color: #8491a2;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+:where(.admin-shell .log-page) .log-facts dd {
+    min-width: 0;
+    margin: 0;
+    color: #455a72;
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+:where(.admin-shell .log-page) .log-technical {
+    margin-top: 20px;
+    padding: 0 16px;
+    border: 1px solid #e5eaf1;
+    border-radius: 8px;
+    background: #f8fafc;
+}
+
+:where(.admin-shell .log-page) .log-technical summary {
+    padding: 14px 0;
+    color: #526b86;
+    font-size: 13px;
+    font-weight: 550;
+    cursor: pointer;
+}
+
+:where(.admin-shell .log-page) .log-technical summary:focus-visible {
+    outline: 2px solid #3269a5;
+    outline-offset: 3px;
+}
+
+:where(.admin-shell .log-page) .log-technical .log-facts > div:last-child {
+    border-bottom: 0;
+}
+
+@media (max-width: 560px) {
+    :where(.admin-shell .log-page) .log-facts > div {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 6px;
+    }
+}
+
+.admin-shell .admin-module.log-page .admin-row-actions .admin-button {
+    min-height: 32px;
+    margin: 0;
+    padding: 5px 10px;
+    border: 1px solid #cbdcf0;
+    border-radius: 6px;
+    background: #f0f6fd;
+    color: #245b91;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.admin-shell .admin-module.log-page .admin-row-actions .admin-button:hover:not(:disabled) {
+    border-color: #8eafd2;
+    background: #e2eefb;
+    color: #194b7c;
+}
+
+:where(.admin-shell .log-page) .log-detail-summary {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 0 0 18px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #edf1f6;
+}
+
+:where(.admin-shell .log-page) .log-detail-event {
+    color: #243b55;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+:where(.admin-shell .log-page) .log-detail-section {
+    margin-top: 24px;
+}
+
+:where(.admin-shell .log-page) .log-detail-section h3 {
+    margin: 0 0 8px;
+    color: #344960;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+:where(.admin-shell .log-page) .log-detail-subheading {
+    margin: 16px 0 4px;
+    color: #8491a2;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+:where(.admin-shell .log-page) .log-request-id {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+:where(.admin-shell .log-page) .log-request-id > span {
+    flex: 1 1 220px;
+    min-width: 0;
+}
+
+:where(.admin-shell .log-page) .log-copy-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 8px;
+    border: 1px solid #cbdcf0;
+    border-radius: 5px;
+    color: #245b91;
+    background: #fff;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+:where(.admin-shell .log-page) .log-copy-button:hover {
+    background: #eaf2fc;
+}
+
+:where(.admin-shell .log-page) .log-copy-button:focus-visible {
+    outline: 2px solid #3269a5;
+    outline-offset: 2px;
+}
+
+:where(.admin-shell .log-page) .log-request-id + p {
+    margin: 6px 0 0;
+}
+
+/* 详情底部操作与内容分区，保持按钮和弹窗边缘的留白。 */
+.admin-shell .admin-module.log-page .admin-dialog {
+    border: 1px solid #e1e8f1;
+    border-radius: 14px;
+    box-shadow: 0 25px 90px #14294030;
+    padding: 28px;
+}
+
+.admin-shell .admin-module.log-page .admin-dialog-actions {
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid #edf1f6;
+}
+
+.admin-shell .admin-module.log-page .admin-dialog-actions .admin-button {
+    min-width: 80px;
+    min-height: 38px;
+    padding: 8px 20px;
+    border-radius: 8px;
+}
+
+@media (max-width: 520px) {
+    .admin-shell .admin-module.log-page .admin-dialog {
+        padding: 22px 18px;
+    }
+
+    .admin-shell .admin-module.log-page .admin-dialog-actions {
+        margin-top: 18px;
+        padding-top: 16px;
+    }
+}
+
+/* 变更对照属于日志详情；保留独立滚动，长文本不撑开弹窗。 */
+.admin-shell .log-changes-scroll { overflow-x: auto; }
+.admin-shell .log-changes-table { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: 13px; }
+.admin-shell .log-changes-table th, .admin-shell .log-changes-table td { padding: 10px; text-align: left; vertical-align: top; border-bottom: 1px solid #e5e7eb; overflow-wrap: anywhere; white-space: pre-wrap; }
+.admin-shell .log-changes-table th:first-child { width: 24%; }
+.admin-shell .log-change-added, .admin-shell .log-change-removed { margin: 8px 0 0; }

@@ -1,0 +1,32 @@
+/* Studwell 字体与语义排版；页面和 Section 维护自身版式。 */
+:root {
+  --font-sans:Inter,'Segoe UI','Microsoft YaHei',sans-serif;
+  --text-label:.75rem;
+  --text-index:1rem;
+  --text-small:.875rem;
+  --text-body:1rem;
+  --text-lead:1.125rem;
+  --text-subtitle:1.125rem;
+  --text-card:1.25rem;
+  --text-section:1.75rem;
+  --text-page:2.25rem;
+  --text-display:3.5rem;
+  --text-stat:3rem;
+  --text-year:2rem;
+  --font-weight-regular:400;
+  --font-weight-medium:500;
+  --font-weight-semibold:600;
+  --font-weight-bold:700;
+  --leading-display:1.15;
+  --leading-heading:1.4;
+  --leading-compact:1.5;
+  --leading-body:1.9;
+  --tracking-heading:-.03em;
+  --tracking-label:.12em;
+  --tracking-normal:0;
+  font-size:16px;
+  font-synthesis:none;
+  text-rendering:optimizeLegibility;
+}
+::selection{background:#d8e5ff}
+@media(max-width:767px){:root{--text-page:2rem;--text-display:2.5rem}}

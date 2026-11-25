@@ -1,0 +1,7 @@
+/* 指南正文排版；右侧留白与页内目录模板配套，不参与路由或页面装配。 */
+.guide-article-frame{box-sizing:border-box;max-width:1250px;margin-inline:auto;padding-inline:60px}
+.guide-article-frame .document-content{max-width:780px;width:100%}
+@media(min-width:1001px){.content-page:has(.sidebar-navigation) .guide-article-frame{padding-right:290px}}
+@media(max-width:1250px){.guide-article-frame{padding-left:40px}}
+@media(max-width:1000px){.guide-article-frame{padding-right:40px}}
+@media(max-width:760px){.guide-article-frame{padding-inline:24px}}

@@ -1,0 +1,73 @@
+/* 定时任务TaskRunHistory所属区块样式，以 scoped 加载。 */
+
+.task-warning {
+    color: #a67525;
+}
+
+.task-history {
+    margin-top: 24px;
+}
+
+.task-heading-divider {
+    margin-inline: 1px;
+    color: #c5cfdb;
+    font-weight: 400;
+}
+
+.task-collapse {
+    min-height: 30px;
+    padding: 5px 10px;
+}
+
+.task-date-range {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #9ba7b7;
+    font-size: 12px;
+}
+
+.task-date-range input {
+    min-width: 0;
+    width: 152px;
+    padding: 8px 10px;
+    background: white;
+    color: #526278;
+}
+
+.task-run-id {
+    color: #72869d;
+    font-variant-numeric: tabular-nums;
+}
+
+.task-count {
+    color: #455e78;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+}
+
+.task-count-unit {
+    margin-left: 5px;
+    color: #9ba7b5;
+    font-size: 11px;
+    font-weight: 400;
+}
+
+@media (max-width: 760px) {
+    .task-date-range {
+        flex: 1 1 100%;
+    }
+}
+
+@media (max-width: 760px) {
+    .task-date-range input {
+        flex: 1;
+        width: 0;
+    }
+}
+
+@media (max-width: 760px) {
+    .task-history .admin-view-list-heading h2 {
+        font-size: 13px;
+    }
+}
