@@ -12,7 +12,7 @@
     "build": "nuxt build",
     "build:task-worker": "node scripts/build-task-worker.ts",
     "predev": "npm run runtime:check && npm run search:index",
-    "dev": "nuxt dev --host 127.0.0.1 --port 3100",
+    "dev": "nuxt dev --host 127.0.0.1",
     "pregenerate": "npm run runtime:check",
     "postgenerate": "npm run search:index -- --output .output/public/search",
     "generate": "nuxt generate",
