@@ -174,6 +174,16 @@ it('根路由可以绑定任意已发布页面，不要求固定 home 编码',as
  const snapshot={routes:[{path:'/',resourceId,routeNodeId:null}],seo:state.publishedSeo.filter(row=>row.resourceId===resourceId)}
  await expect(validateSiteConfig(client.database,snapshot,await readSiteLanguages(client.database))).resolves.toBeUndefined()
 })
+it('路由与 SEO 同一事务保存，失败不改变草稿和版本',async()=>{
+ const before=await tree(),node=before.draft.find(row=>row.resourceId===resourceId)!
+ const entries=siteLocales.map(locale=>({locale,title:'Combined draft',description:'Combined description',indexable:true,ogTitle:'',ogDescription:'',ogMediaId:null}))
+ const input={action:'save',id:node.id,parentId:node.parentId,slug:node.slug,targetType:node.targetType,resourceId,seo:entries}
+ await expect(edit({...input,slug:'combined-failed',seo:entries.map(row=>({...row,ogMediaId:'999999999999999999'}))})).rejects.toMatchObject({code:'INVALID_INPUT'})
+ expect(await tree()).toEqual(before)
+ const saved=await edit(input)
+ expect(saved.version).toBe(before.version+1)
+ expect(saved.seo.filter(row=>row.resourceId===resourceId).every(row=>row.title==='Combined draft')).toBe(true)
+})
 it('配置回滚重新检查当前目标，不能恢复已下线页面', async () => {
     const db = client.database, previous = (await tree()).publishedReleaseId!;
     // Simulate a historical target subsequently withdrawn after route removal.

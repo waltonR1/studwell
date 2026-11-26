@@ -20,14 +20,12 @@ export function useRouteMaintenance(){
   store.closeEditor()
  }
  async function save(){
-  if(store.seoDirty&&!await confirm.ask({title:'放弃未保存的 SEO 修改？',message:'保存路由后会关闭编辑窗口，SEO 草稿需要单独保存。',confirmLabel:'仅保存路由'}))return
   await notify(store.save)
  }
  async function remove(){
   if(!form.value.id||!await confirm.ask({title:'删除路由草稿？',message:'当前公开地址保留到下一次发布。',confirmLabel:'删除草稿'}))return
   await notify(store.remove)
  }
- const saveSeo=()=>notify(store.saveSeo)
  const setRouteEnabled=(node:WebsiteRouteNode,enabled:boolean)=>notify(()=>store.setRouteEnabled(node,enabled))
  async function publish(releaseId?:string){
   if(busy.value||editorOpen.value)return
@@ -62,7 +60,7 @@ export function useRouteMaintenance(){
   const online=onlineByNode.value.has(node.id)
   return node.enabled===false?(online?'待停用':'已停用'):(online?'已启用':'待启用')
  }
- const editor={tree,editLocales,form,editorOpen,busy,error,target,dynamicRoute,seoLocale,seoEntry,seoTarget,sorted,collapsed,onlineByNode,treeRows,targetLabels,toggleNode,proposed,changed,pendingRemovals,routeStatus,setRouteEnabled,select,save,remove,saveSeo,closeEditor}
+ const editor={tree,editLocales,form,editorOpen,busy,error,target,dynamicRoute,seoLocale,seoEntry,seoTarget,sorted,collapsed,onlineByNode,treeRows,targetLabels,toggleNode,proposed,changed,pendingRemovals,routeStatus,setRouteEnabled,select,save,remove,closeEditor}
  function resetUi(){store.reset();collapsed.value.clear();historyOpen.value=false;toast.dismiss();confirm.settle(false)}
  const view=computed(()=>({
   title:'路由与 SEO',description:'独立维护并发布公开路径和页面 SEO，按当前已启用语言校验。',className:'website-routes',

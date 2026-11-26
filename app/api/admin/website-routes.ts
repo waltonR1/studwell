@@ -5,7 +5,7 @@ import type {WebsiteSiteConfigTree} from '#shared/types/admin/website-site-confi
 import type {WebsiteRouteNode} from '#shared/types/website/route'
 import type {AdminApiClient} from '~/types/admin/api'
 type Mutation=
- | {action:'save';version:number;id:string|null;parentId:string|null;slug:string;targetType:WebsiteRouteNode['targetType'];resourceId:string|null}
+ | {action:'save';version:number;id:string|null;parentId:string|null;slug:string;targetType:WebsiteRouteNode['targetType'];resourceId:string|null;seo?:z.infer<typeof websiteSeoUpdateSchema>['entries']}
  | {action:'delete';version:number;id:string}
  | {action:'set-enabled';version:number;id:string;enabled:boolean}
  | z.infer<typeof websiteSeoUpdateSchema>

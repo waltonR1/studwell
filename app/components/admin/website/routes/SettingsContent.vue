@@ -4,7 +4,7 @@ import {siteLocaleNames} from '#shared/config/admin/site-settings'
 import type {useRouteMaintenance} from '~/composables/admin/website/useRouteMaintenance'
 
 const {editor}=defineProps<{editor:ReturnType<typeof useRouteMaintenance>['contentProps']['value']['editor']}>()
-const {tree,editLocales,form,editorOpen,busy,error,target,dynamicRoute,seoLocale,seoEntry,seoTarget,sorted,collapsed,onlineByNode,treeRows,targetLabels,toggleNode,proposed,changed,pendingRemovals,routeStatus,setRouteEnabled,select,save,remove,saveSeo,closeEditor}=editor
+const {tree,editLocales,form,editorOpen,busy,error,target,dynamicRoute,seoLocale,seoEntry,seoTarget,sorted,collapsed,onlineByNode,treeRows,targetLabels,toggleNode,proposed,changed,pendingRemovals,routeStatus,setRouteEnabled,select,save,remove,closeEditor}=editor
 const localeOptions=(locales:SiteLocale[])=>locales.map(value=>({value,label:siteLocaleNames[value]}))
 const parentOptions=computed(()=>[{value:'',label:'顶层'},...sorted.value.filter(node=>node.id!==form.value.id).map(node=>({value:node.id,label:node.path}))])
 const pageOptions=computed(()=>tree.value.pages.map(page=>({value:page.id,label:page.key+(page.published?'':'（内容未发布）')})))
@@ -28,7 +28,8 @@ const targetOptions=Object.entries(targetLabels).map(([value,label])=>({value,la
    <AdminCommonDialog :open="editorOpen" :title="form.id ? '编辑路由' : '新增路由'" :busy="busy" @close="closeEditor">
     <div class="route-dialog-body">
      <AdminCommonFeedback v-if="error" tone="error">{{ error }}</AdminCommonFeedback>
-     <form id="website-route-form" class="route-dialog-section" @submit.prevent="save">
+     <form id="website-route-form" class="route-dialog-body" @submit.prevent="save">
+     <section class="route-dialog-section">
       <h3>路由设置</h3>
       <div class="admin-fields admin-view-create-form route-dialog-fields">
         <label>父节点<AdminCommonSelectField v-model="form.parentId" label="父节点" :items="parentOptions" :disabled="busy" :body-lock="false"/></label>
@@ -47,12 +48,12 @@ const targetOptions=Object.entries(targetLabels).map(([value,label])=>({value,la
         <li v-for="node in changed" :key="node.id">{{ tree.draft.find(old=>old.id===node.id)?.path }} → {{ node.path }}</li>
        </ul>
       </div>
-     </form>
+     </section>
      <p v-if="dynamicRoute" class="admin-help">详情页的 SEO 由每篇文章单独维护。</p>
-     <form v-if="seoTarget && seoEntry" class="route-dialog-section" @submit.prevent="saveSeo">
+     <section v-if="seoTarget && seoEntry" class="route-dialog-section">
       <header>
        <h3>页面 SEO</h3>
-       <p class="admin-help">页面 · {{ target?.key }}。SEO 草稿单独保存，切换目标会加载该页面已保存的 SEO。</p>
+       <p class="admin-help">页面 · {{ target?.key }}。路由和 SEO 一起保存为草稿，发布后生效。切换目标会加载该页面已保存的 SEO。</p>
       </header>
       <div class="admin-fields admin-view-create-form route-dialog-fields route-seo-controls">
         <label>SEO 语言<AdminCommonSelectField label="SEO 语言" :model-value="seoLocale" :items="localeOptions(editLocales)" :disabled="busy" :body-lock="false" @update:model-value="seoLocale=$event as SiteLocale"/></label>
@@ -73,15 +74,13 @@ const targetOptions=Object.entries(targetLabels).map(([value,label])=>({value,la
         <AdminMediaPicker :key="JSON.stringify(seoTarget)+seoLocale" :field="'route-seo-'+JSON.stringify(seoTarget)+'-'+seoLocale" v-model="seoEntry.ogMediaId" label="OG 分享图片" kind="image" :disabled="busy"/>
        </div>
       </section>
-      <div class="route-seo-actions">
-       <UButton type="submit" class="admin-button" :disabled="busy">保存 SEO 草稿</UButton>
-      </div>
+     </section>
      </form>
     </div>
    <template #actions>
     <UButton v-if="form.id" class="admin-button admin-button-danger" :disabled="busy" @click="remove">删除节点</UButton>
     <UButton class="admin-button" :disabled="busy" @click="closeEditor">关闭</UButton>
-    <UButton type="submit" form="website-route-form" class="admin-button admin-button-primary" :disabled="busy||!proposed">保存路由草稿</UButton>
+    <UButton type="submit" form="website-route-form" class="admin-button admin-button-primary" :disabled="busy||!proposed">保存草稿</UButton>
    </template>
    </AdminCommonDialog>
 </template>
@@ -166,8 +165,4 @@ const targetOptions=Object.entries(targetLabels).map(([value,label])=>({value,la
  padding-inline-start: 20px;
 }
 
-.route-seo-actions {
- display: flex;
- justify-content: flex-end;
-}
 </style>

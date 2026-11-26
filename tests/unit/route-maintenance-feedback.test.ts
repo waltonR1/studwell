@@ -34,3 +34,21 @@ it('发布被引用关系阻止时仅使用 Toast，不占用页面错误区域'
  expect(ui.toast.notification.value).toEqual({message:'已发布导航仍引用此路由',tone:'error'})
  expect(ui.view.value.saveError).toBe('')
 })
+
+it('一次保存路由及所有语言 SEO，失败时保留编辑内容',async()=>{
+ const ui=scope.run(()=>useRouteMaintenance())!;await ui.load();ui.newRoute()
+ const editor=ui.contentProps.value.editor
+ editor.tree.value.pages=[{id:'123',key:'services',published:true}]
+ editor.form.value.targetType='page';editor.form.value.resourceId='123';editor.form.value.slug='services'
+ editor.seoEntry.value!.title='统一保存标题'
+ mock.mutate.mockRejectedValueOnce(failure('INVALID_INPUT','OG 图片不可用'))
+ await editor.save()
+ expect(mock.confirm).not.toHaveBeenCalled()
+ expect(mock.mutate).toHaveBeenCalledTimes(1)
+ expect(mock.mutate.mock.calls[0]![2]).toMatchObject({action:'save',resourceId:'123',slug:'services',seo:expect.arrayContaining([expect.objectContaining({title:'统一保存标题'})])})
+ expect(editor.editorOpen.value).toBe(true)
+ expect(editor.seoEntry.value!.title).toBe('统一保存标题')
+ mock.mutate.mockResolvedValueOnce({...editor.tree.value,version:2})
+ await editor.save()
+ expect(editor.editorOpen.value).toBe(false)
+})

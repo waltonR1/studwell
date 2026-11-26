@@ -95,10 +95,10 @@ export const useAdminWebsiteRoutesStore=defineStore('admin-website-routes',()=>{
  async function save(){
   return run(async isActive=>{
   const {id,parentId,slug,targetType,resourceId}=form.value
-  const data=await api.mutate({action:'save',version:tree.value.version,id,parentId:parentId||null,slug:slug.trim(),targetType,resourceId:targetType==='group'?null:resourceId||null})
+  const data=await api.mutate({action:'save',version:tree.value.version,id,parentId:parentId||null,slug:slug.trim(),targetType,resourceId:targetType==='group'?null:resourceId||null,...(seoTarget.value?{seo:seoEntries.value}:{})})
   if(!isActive())return null
   tree.value=data
-  editorOpen.value=false;return {status:'success',message:'路由草稿已保存。'}
+  editorOpen.value=false;return {status:'success',message:'草稿已保存，发布后生效。'}
   },true)
  }
  async function remove(){
@@ -115,14 +115,6 @@ export const useAdminWebsiteRoutesStore=defineStore('admin-website-routes',()=>{
    return {status:'success',message:enabled?'已保存启用设置，发布后生效。':'已保存停用设置，发布后生效；路径和 SEO 保留。'}
   })
  }
- const saveSeo=()=>run(async isActive=>{
-  if(!seoTarget.value)return null
-  const data=await api.mutate({action:'seo',version:tree.value.version,...seoTarget.value,entries:seoEntries.value})
-  if(!isActive())return null
-  tree.value=data
-  loadSeo()
-  return {status:'success',message:'SEO 草稿已保存，发布后生效。'}
- },true)
  async function cleanupRelease(releaseId:string){
   if(editorOpen.value)return null
   return run(async isActive=>{
@@ -151,5 +143,5 @@ export const useAdminWebsiteRoutesStore=defineStore('admin-website-routes',()=>{
  }
  const seoDirty=computed(()=>JSON.stringify(seoEntries.value)!==seoBaseline.value)
  watch(()=>session.generation,reset,{flush:'sync'})
- return {record,tree,loading,loadError,pending,error,busy,editLocales,form,editorOpen,target,dynamicRoute,seoLocale,seoEntries,seoEntry,seoTarget,editorDirty,seoDirty,proposed,changed,pendingRemovals,select,closeEditor,load,save,remove,setRouteEnabled,saveSeo,publish,cleanupRelease,reset}
+ return {record,tree,loading,loadError,pending,error,busy,editLocales,form,editorOpen,target,dynamicRoute,seoLocale,seoEntries,seoEntry,seoTarget,editorDirty,seoDirty,proposed,changed,pendingRemovals,select,closeEditor,load,save,remove,setRouteEnabled,publish,cleanupRelease,reset}
 })

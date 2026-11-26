@@ -117,7 +117,7 @@ export async function assertPublishedRouteTargets(db:DatabaseExecutor,resourceId
 const id=z.string().regex(/^[1-9][0-9]{0,19}$/)
 export const routeNodeMutationSchema=z.discriminatedUnion('action',[
  z.strictObject({version:z.number().int().positive(),action:z.literal('set-enabled'),id,enabled:z.boolean()}),
- z.strictObject({version:z.number().int().positive(),action:z.literal('save'),id:id.nullable(),parentId:id.nullable(),slug:z.string().max(64),targetType:z.enum(['group','page']),resourceId:id.nullable()}),
+ z.strictObject({version:z.number().int().positive(),action:z.literal('save'),id:id.nullable(),parentId:id.nullable(),slug:z.string().max(64),targetType:z.enum(['group','page']),resourceId:id.nullable(),seo:websiteSeoUpdateSchema.shape.entries.optional()}),
  z.strictObject({version:z.number().int().positive(),action:z.literal('module-policy'),policy:websiteModulePolicySchema}),
  z.strictObject({version:z.number().int().positive(),action:z.literal('delete'),id}),websiteSeoUpdateSchema,
 ])
@@ -139,6 +139,17 @@ export async function readWebsiteRouteTree(db:Database,actor:bigint){
  },{isolationLevel:'repeatable read'})
 }
 
+async function saveRouteSeo(tx:DatabaseExecutor,resourceId:string,entriesInput:z.infer<typeof websiteSeoUpdateSchema>['entries'],routes:ReturnType<typeof project>){
+   if(new Set(entriesInput.map(row=>row.locale)).size!==entriesInput.length)throw invalid('语言不能重复。')
+   const resource=(await resources.all(tx)).find(row=>String(row.id)===resourceId&&row.type==='page')
+   if(!resource)throw new ApiError('NOT_FOUND')
+   if(routes.some(row=>row.resourceId===resourceId&&parseWebsiteRoutePattern(row.path)?.parameter))throw invalid('动态详情的 SEO 由业务内容维护。')
+   const entries=entriesInput.map(row=>({...row,resourceId:resourceId}))
+   await assertSeoMedia(tx,entries);await saveSeo(tx,entries)
+   const allEntries=(await readSeo(tx,true)).filter(row=>row.resourceId===resourceId)
+   await mediaRepository.replaceReferences(tx,seoOwner(entries[0]!),allEntries.flatMap(row=>row.ogMediaId?[{mediaId:BigInt(row.ogMediaId),field:row.locale+'.ogMediaId'}]:[]))
+}
+
 export async function mutateWebsiteRouteNode(db:Database,actor:bigint,raw:unknown,meta:AuthMeta){
  const input=await parseInput(routeNodeMutationSchema,raw)
  await db.transaction(async tx=>{
@@ -155,14 +166,7 @@ export async function mutateWebsiteRouteNode(db:Database,actor:bigint,raw:unknow
    await taskRepository.requestSearchRebuild(tx);return
   }
   if(input.action==='seo'){
-   if(new Set(input.entries.map(row=>row.locale)).size!==input.entries.length)throw invalid('语言不能重复。')
-   const resource=(await resources.all(tx)).find(row=>String(row.id)===input.resourceId&&row.type==='page')
-   if(!resource)throw new ApiError('NOT_FOUND')
-   if(project(rows).some(row=>row.resourceId===input.resourceId&&parseWebsiteRoutePattern(row.path)?.parameter))throw invalid('动态详情的 SEO 由业务内容维护。')
-   const entries=input.entries.map(row=>({...row,resourceId:input.resourceId}))
-   await assertSeoMedia(tx,entries);await saveSeo(tx,entries)
-   const allEntries=(await readSeo(tx,true)).filter(row=>row.resourceId===input.resourceId)
-   await mediaRepository.replaceReferences(tx,seoOwner(entries[0]!),allEntries.flatMap(row=>row.ogMediaId?[{mediaId:BigInt(row.ogMediaId),field:row.locale+'.ogMediaId'}]:[]))
+   await saveRouteSeo(tx,input.resourceId,input.entries,project(rows))
    await bumpSiteConfig(tx,state.version);await audit(tx,actor,meta,'website.config.save',state.version);return
   }
   const existing=input.id?rows.find(row=>String(row.id)===input.id):undefined
@@ -187,7 +191,11 @@ export async function mutateWebsiteRouteNode(db:Database,actor:bigint,raw:unknow
   const resourceId=input.resourceId?BigInt(input.resourceId):null
   const value={slug,targetType,parentId,resourceId}
   if(resourceId!==null&&!(await resources.all(tx)).some(row=>row.id===resourceId&&row.type==='page'))throw invalid('目标页面不存在。')
-  project([...rows.filter(row=>row.id!==existing?.id),{...value,id:existing?.id??0n,enabled:existing?.enabled??true,sortOrder:existing?.sortOrder??0}])
+  const projected=project([...rows.filter(row=>row.id!==existing?.id),{...value,id:existing?.id??0n,enabled:existing?.enabled??true,sortOrder:existing?.sortOrder??0}])
+  if(input.seo){
+   if(targetType!=='page'||!input.resourceId)throw invalid('SEO 必须绑定页面。')
+   await saveRouteSeo(tx,input.resourceId,input.seo,projected)
+  }
   if(existing)await updateRouteNode(tx,existing.id,value)
   else await insertRouteNode(tx,value)
   await bumpSiteConfig(tx,state.version);await audit(tx,actor,meta,'website.config.save',state.version)
